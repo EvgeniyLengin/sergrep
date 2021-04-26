@@ -1,0 +1,417 @@
+<?php
+/**
+ * Подвал сайта.
+ *
+ * @var umiTemplaterPHP|ViewPhpExtension|DemomarketPhpExtension $this
+ * @var array $variables
+ */
+?>
+<?php
+$homepage = $this->getPageById(312);
+$currentUrl = $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+?>
+
+
+
+<div class="pre_footer"></div>
+
+
+<footer class="footer">
+
+
+  <div class="red-polos">
+      <div class="fix-center-polos">
+                <div class="red-left-bar">
+                    <?= $this->render($variables, 'layout/footer/redcolormenu') ?>
+                </div>
+                <div class="red-right-bar">
+                    <a href="tel:<?= $homepage->getValue('pole_dlya_telefona_dlya_robota') ?>"><?= $homepage->getValue('pole_dlya_telefona_vidno_polzovatelyu') ?></a>
+                    <span class="for-callback-modal">Заказать звонок</span>
+                </div>
+      </div>
+  </div>
+  <div class="fw-wrap-two">
+
+  </div>
+  <div class="container">
+
+    <div class="footer__wrap1">
+      <div class="footer__box1">
+        <p class="footer__coper">
+          © <?= date("Y") ?>. Все права защищены.
+        </p>
+        <p class="footer__dev">
+          <span>Разработка сайта -</span>
+          <a href="https://german-web.org/" target="_blank">GERMAN <span>WEB</span> </a>
+        </p>
+      </div>
+      <div class="footer__box2-wrap">
+        <div class="footer__box2">
+          <a href="mailto:<?= $homepage->getValue('email_dlya_obratnoj_svyazi') ?>" class="footer__email"><?= $homepage->getValue('email_dlya_obratnoj_svyazi') ?></a>
+          <p class="footer__social">
+            <a href="<?= $homepage->getValue('pervaya_socialnaya_sest_ssylka')  ?>" target="_blank" >  <img src="<?= $homepage->getValue('kartinka_dlya_pervoj') ?>" alt=""></a>
+            <a href="<?= $homepage->getValue('vtoraya_socialnaya_sest_ssylka') ?>" target="_blank">  <img src="<?= $homepage->getValue('kartinka_dlya_vtoroj') ?>" alt=""></a>
+            <a href="<?= $homepage->getValue('tretya_socialnaya_sest_ssylka') ?>" target="_blank" >  <img src="<?= $homepage->getValue('kartinka_dlya_tretej') ?>" alt=""></a>
+            <a href="<?= $homepage->getValue('chetvertaya_socialnaya_sest_ssylka') ?>" target="_blank" >  <img src="<?= $homepage->getValue('kartinka_dlya_chetvertoj') ?>" alt=""></a>
+          </p>
+        </div>
+        <div class="footer__box3">
+          <p class="footer__adres">
+            <?= $homepage->getValue('adres_gorod_ulica') ?>
+          </p>
+          <p class="footer__tel">
+            <a href="tel:+<?= $homepage->getValue('rezervnyj_telefon_robotu') ?>"><?= $homepage->getValue('rezervnyj_telefon_cheloveku') ?></a>
+            <a href="tel:+<?= $homepage->getValue('vtoroj_rezervnyj_telefon_robotu') ?>"><?= $homepage->getValue('vtoroj_rezervnyj_telefon_cheloveku') ?></a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div type="button" class="callback-bt">
+    <div class="text-call">
+        <i class="fa fa-phone"></i>
+        <span>Заказать<br>звонок</span>
+    </div>
+</div>
+</footer>
+<!-- Модальное окно регистрации -->
+<div id="wrapper">
+  <div class="cover"></div>
+</div>
+<!-- Кнопка на верх -->
+<div id="toTop" class="flaticon-arrow-pointing-to-right"></div>
+<script src="assets/js/libs.min.js"></script>
+<script src="assets/js/main.min.js"></script>
+<script src="assets/js/custom.js"></script>
+
+      <div class="shadow-overlay">
+
+      </div>
+      <div class="success-message callback">
+        <div class="heading-modal-success">
+          <h3>Сообщение успешно отправлено</h3>
+          <div class="exit-in-order-call">
+              <div class="exit-button-in-order-call">
+
+              </div>
+          </div>
+        </div>
+        <div class="rest-content">
+          <div class="svg-back-div">
+
+          </div>
+          <div class="text-success">
+            <p>Отлично, в ближайшее время мы свяжемся с <span>Вами</span> </p>
+          </div>
+
+        </div>
+      </div>
+      <div class="success-message contact">
+        <div class="heading-modal-success">
+          <h3>Сообщение успешно отправлено</h3>
+          <div class="exit-in-order-call">
+              <div class="exit-button-in-order-call">
+
+              </div>
+          </div>
+        </div>
+        <div class="rest-content">
+          <div class="svg-back-div">
+
+          </div>
+          <div class="text-success">
+            <p>Отлично, мы благодарны Вам за оценку нашей компании. </p>
+          </div>
+
+        </div>
+      </div>
+      <form class="" id="aj_form"action="/webforms/send" method="post">
+        <div class="modal-order-a-call callback">
+            <div class="heading-in-modal-order">
+                <h3>Заказать звонок</h3>
+                <div class="exit-in-order-call">
+                    <div class="exit-button-in-order-call">
+
+                    </div>
+                </div>
+            </div>
+            <div class="cont-info">
+              <div class="left-cont-info">
+                <span>Контактная информация</span>
+              </div>
+              <div class="right-cont-info">
+                <div class="input-container">
+                    <label for="nameuser">Ваше имя</label>
+                    <input type="text" name="data[new][vashe_imya]" value="" autocomplete="off">
+                </div>
+                <div class="input-container">
+                    <label  class="labelvalid" for="emailuser">Телефон или E-mail <span style="color:red;">*</span></label>
+                    <input class="validnumEmail" type="text" name="data[new][telefon_ili_emejl]" value="" autocomplete="off"  >
+                </div>
+              </div>
+            </div>
+            <div class="dop-info-order">
+              <div class="left-dop-info">
+                <span>Дополнительно</span>
+              </div>
+              <div class="right-dop-info">
+                <div class="input-container">
+                    <label for="message">Сообщение</label>
+                    <input type="text" name="data[new][soobwenie]" value="" autocomplete="off">
+                </div>
+                <div class="wrapper-for-checkbox">
+                  <input id="serguser" type="checkbox" name="data[new][chekboks]" value="">
+                  <label class="psevdo-checkbox" for="serguser"></label>
+                  <span class="for-checkbox-button">Я являюсь клиентом ГПБ «SERG»</span>
+                  <input type="hidden" class="checkklient" name="data[new][klient]" value="Нет">
+                </div>
+              </div>
+            </div>
+            <div class="sendform-div">
+              <button type="button" id="send-button-order" class="send-button-order">Отправить</button>
+
+              <div class="text-order-call">
+                  <span>Нажимая на кнопку «Отправить», вы принимаете  </span>
+                  <a href="javascript:void(0);" >Условия обработки конфеденциальных данных</a>
+              </div>
+
+            </div>
+        </div>
+        <input type="hidden" name="system_form_id" value="226" />
+        <input type="hidden" name="ref_onsuccess" value="/webforms/posted/" />
+        <input type="hidden" name="system_email_to" value="936">
+        <input type="hidden" id="result_form" name="result" value="">
+
+
+      </form>
+
+
+      <!-- Форма отзывов -->
+      <form class="" id="contact_aj_form" action="/webforms/send" method="post">
+        <div class="modal-order-a-call contact">
+            <div class="heading-in-modal-order">
+                <h3>Оставить отзыв</h3>
+                <div class="exit-in-order-call">
+                    <div class="exit-button-in-order-call">
+
+                    </div>
+                </div>
+            </div>
+            <div class="cont-info">
+              <div class="left-cont-info">
+                <span>Контактная информация</span>
+              </div>
+              <div class="right-cont-info">
+                <div class="input-container">
+                    <label for="nameuser">Ваше имя</label>
+                    <input type="text" name="data[new][imya_yuzera]" value="" autocomplete="off">
+                </div>
+                <div class="input-container">
+                    <label  class="labelvalid" for="telefon_ili_emejl_yuzera">Телефон или E-mail </label>
+                    <input class="validnumEmail" type="text" name="data[new][telefon_ili_emejl_yuzera]" value="" autocomplete="off"  >
+                </div>
+              </div>
+            </div>
+            <div class="dop-info-order">
+              <div class="left-dop-info">
+                <span>Ваш отзыв</span>
+              </div>
+              <div class="right-dop-info">
+                <div class="input-container">
+                    <label class="message valid" for="message valid">Сообщение<span style="color:red;">*</span></label>
+                    <input class="otzyv-message" type="text" name="data[new][tekst_otzyva]" value="" autocomplete="off">
+                </div>
+                <div class="wrapper-for-checkbox">
+                  <input id="serguser" type="checkbox" name="data[new][chekboks]" value="">
+                  <label class="psevdo-checkbox" for="serguser"></label>
+                  <span class="for-checkbox-button">Я являюсь клиентом ГПБ «SERG»</span>
+                  <input type="hidden" class="checkklient" name="data[new][klient]" value="Нет">
+                </div>
+              </div>
+            </div>
+            <div class="sendform-div">
+              <button type="button" id="send-button-ordercomments" class="send-button-order">Отправить</button>
+
+              <div class="text-order-call">
+                  <span>Нажимая на кнопку «Отправить», вы принимаете  </span>
+                  <a href="javascript:void(0);" >Условия обработки конфеденциальных данных</a>
+              </div>
+
+            </div>
+        </div>
+        <input type="hidden" name="system_form_id" value="227" />
+        <input type="hidden" name="ref_onsuccess" value="/webforms/posted/" />
+        <input type="hidden" name="system_email_to" value="936">
+        <input type="hidden" id="result_form" name="result" value="">
+
+
+      </form>
+
+      <!-- форма заказа чоп   -->
+      <form class="" id="chop_aj_form" action="/webforms/send" method="post">
+        <div class="modal-order-a-call chop">
+            <div class="heading-in-modal-order">
+                <h3>Заявка на партнёрскую программу ЧОП</h3>
+                <div class="exit-in-order-call">
+                    <div class="exit-button-in-order-call">
+
+                    </div>
+                </div>
+            </div>
+            <div class="cont-info">
+              <div class="left-cont-info">
+                <span>Контактная информация</span>
+              </div>
+              <div class="right-cont-info">
+                <div class="input-container">
+                    <label for="nameuser">Ваше имя</label>
+                    <input type="text" name="data[new][imya_klienta_chop]" value="" autocomplete="off">
+                </div>
+                <div class="input-container">
+                    <label  class="labelvalid" for="telefon_ili_emejl_yuzera">Номер телефона<span style="color:red;">*</span> </label>
+                    <input class="validnumEmail" type="text" name="data[new][telefon_klienta_chop]" value="" autocomplete="off"  >
+                </div>
+              </div>
+            </div>
+            <div class="dop-info-order">
+              <div class="left-dop-info">
+                <span>Пожелание или доп. информация</span>
+              </div>
+              <div class="right-dop-info">
+                <div class="input-container">
+                    <label class="message valid" for="message valid">Сообщение</label>
+                    <input class="otzyv-message" type="text" name="data[new][soobwenie_klienta_chop]" value="" autocomplete="off">
+                </div>
+                <div class="wrapper-for-checkbox">
+                  <input id="serguser" type="checkbox" name="data[new][chekboks]" value="">
+                  <label class="psevdo-checkbox" for="serguser"></label>
+                  <span class="for-checkbox-button">Я являюсь клиентом ГПБ «SERG»</span>
+                  <input type="hidden" class="checkklient" name="data[new][klient]" value="Нет">
+                </div>
+              </div>
+            </div>
+            <div class="sendform-div">
+              <button type="button" id="send-button-orderchop" class="send-button-order">Отправить</button>
+
+              <div class="text-order-call">
+                  <span>Нажимая на кнопку «Отправить», вы принимаете  </span>
+                  <a href="javascript:void(0);" >Условия обработки конфеденциальных данных</a>
+              </div>
+
+            </div>
+        </div>
+        <input type="hidden" name="system_form_id" value="229" />
+        <input type="hidden" name="ref_onsuccess" value="/webforms/posted/" />
+        <input type="hidden" name="system_email_to" value="936">
+        <input type="hidden" id="result_form" name="result" value="">
+
+
+      </form>
+ <!-- форма оставить заявку   -->
+      <form class="" id="zayavk_aj_form" action="/webforms/send" method="post">
+        <div class="modal-order-a-call zayavk">
+            <div class="heading-in-modal-order">
+                <h3>Оставить заявку </h3>
+                <div class="exit-in-order-call">
+                    <div class="exit-button-in-order-call">
+
+                    </div>
+                </div>
+            </div>
+            <div class="cont-info">
+              <div class="left-cont-info">
+                <span>Контактная информация</span>
+              </div>
+              <div class="right-cont-info">
+                <div class="input-container">
+                    <label for="nameuser">Ваше имя</label>
+                    <input type="text" name="data[new][imya_s_formy_ost_zayavku]" value="" autocomplete="off">
+                </div>
+                <div class="input-container">
+                    <label  class="labelvalid" for="telefon_ili_emejl_yuzera">Телефон или Email<span style="color:red;">*</span> </label>
+                    <input class="validnumEmail" type="text" name="data[new][tel_or_mail]" value="" autocomplete="off"  >
+                </div>
+              </div>
+            </div>
+            <div class="dop-info-order">
+              <div class="left-dop-info">
+                <span>Пожелание или доп. информация</span>
+              </div>
+              <div class="right-dop-info">
+                <div class="input-container">
+                    <label class="message valid" for="message valid">Сообщение</label>
+                    <input class="otzyv-message" type="text" name="data[new][soobwenie_formy]" value="" autocomplete="off">
+                </div>
+                <div class="wrapper-for-checkbox">
+                  <input id="serguser" type="checkbox" name="data[new][chekboks]" value="">
+                  <label class="psevdo-checkbox" for="serguser"></label>
+                  <span class="for-checkbox-button">Я являюсь клиентом ГПБ «SERG»</span>
+                  <input type="hidden" class="checkklient" name="data[new][yavlyaetsya_li_klientom_serzh]" value="Нет">
+                  <input type="hidden" class="" name="data[new][stranica_zayavki]" value="<?= $currentUrl ?>">
+                  <input class="ohrana-val-rod" type="hidden" name="data[new][typesignal]" value="">
+                  <input class="ohrana-val-child" type="hidden" name="data[new][typecomplect]" value="">
+                </div>
+              </div>
+            </div>
+            <div class="sendform-div">
+              <button type="button" id="send-button-orderzayavk" class="send-button-order">Отправить</button>
+
+              <div class="text-order-call">
+                  <span>Нажимая на кнопку «Отправить», вы принимаете  </span>
+                  <a href="javascript:void(0);" >Условия обработки конфеденциальных данных</a>
+              </div>
+
+            </div>
+        </div>
+        <input type="hidden" name="system_form_id" value="230" />
+        <input type="hidden" name="ref_onsuccess" value="/webforms/posted/" />
+        <input type="hidden" name="system_email_to" value="936">
+        <input type="hidden" id="result_form" name="result" value="">
+
+
+      </form>
+
+
+<?php
+$status = $variables['user']['type'];
+if ($status != "guest") {
+  ?>
+
+<div class="wrapper-donation">
+  <div class="head-div-class">
+    <h3>Пополнить баланс картой</h3>
+    <div class="exit-in-order-call">
+        <div class="exit-button-in-order-call">
+
+        </div>
+    </div>
+  </div>
+  <div class="content-donation-div">
+    <div class="left-cont-donat">
+        <span>Сумма</span>
+    </div>
+    <div class="right-cont-info">
+      <div class="input-container">
+          <label class="message" for="price">Сумма для пополнения (руб.)</label>
+          <input class="price" type="text" name="" value="" autocomplete="off" pattern="[0-9]{3,10}	">
+      </div>
+
+    </div>
+
+
+  </div>
+  <div class="button-and-cont-don">
+    <p>Введите сумму и нажмите «Оплатить». Вы будете перенаправленны в платежную систему. </p>
+    <span class="but-oplat-don">Оплатить</span>
+  </div>
+
+
+</div>
+
+<?php
+}
+
+ ?>
+
+</body>
+</html>

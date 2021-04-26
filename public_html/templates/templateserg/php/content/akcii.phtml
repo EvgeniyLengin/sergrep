@@ -1,0 +1,40 @@
+<main class="main-akcii">
+  <div class="container">
+    	<?= $this->render(false, 'library/breadcrums')  ?>
+  </div>
+<div class="content-in-acc">
+  <h4>Акции</h4>
+
+
+
+  <div class="content-wrapper-aci">
+
+    <?php
+   $page = $variables['page'];
+
+   $pagecontent = $page->getValue('nabor_akcij');
+
+   foreach ($pagecontent as $key => $value) {
+     $oneakc = $this->getObjectById($value);
+  
+                                              ?>
+
+      <div class="wrapper-one-block">
+        <div class="img-cont">
+
+            <img src="  <?= $oneakc->getValue('kartinka') ?>" alt="" class="">
+        </div>
+        <div class="text-cont">
+          <?= $oneakc->getValue('kontent') ?>
+        </div>
+      </div>
+
+     <?php
+        }
+     ?>
+
+
+  </div>
+</div>
+
+</main>

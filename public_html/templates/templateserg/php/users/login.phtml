@@ -1,0 +1,168 @@
+<?php
+/**
+ * Системная страница входа на сайт.
+ * В этом шаблоне не используется - блок входа на сайт расположен в шапке сайта,
+ * @see `layout/header/bottom/login.phtml`
+ *
+ * @var umiTemplaterPHP|ViewPhpExtension|DemomarketPhpExtension $this
+ * @var array $variables
+ */
+
+// $this->redirect($this->getCommonVar('pre_lang'));
+?>
+
+<div class="wrapper-form auth">
+  <div class="registrationwrapper">
+
+
+    <?php
+    /**
+     * Системная страница регистрации на сайте.
+     * Если пользователь уже залогинен, произойдет редирект в личный кабинет.
+     *
+     * @var umiTemplaterPHP|ViewPhpExtension|DemomarketPhpExtension $this
+     * @var array $variables
+     */
+
+    $this->redirectLoggedInUserToUserSettings();
+    $action = $this->getCommonVar('pre_lang') . '/users/registrate_do/';
+    ?>
+
+    <div class="section_capt">
+    	<div class="container">
+    		<div class="row">
+    			<h1><?= $this->escape($variables['header']) ?></h1>
+    		</div>
+    	</div>
+    </div>
+
+    <div class="feedback">
+    	<div class="container">
+    		<div class="grey_border">
+          <h3>Регистрация в личном кабинете</h3>
+    			<form id="registrate" enctype="multipart/form-data" method="post" action="<?= $action ?>">
+    				<div class="important">
+              <label for="login"><b>Логин <span>*</span></b></label>
+    					<input type="text" name="login" placeholder="" required>
+      				<p class="hiden-p">Используя логин или @mail Вы сможете авторизоваться в личном кабинете</p>
+    				</div>
+    				<div class="important">
+                <label for="login"><b>Номер телефона</b></label>
+    					<input data-mask="+7 (000) 000-00-00"
+         pattern="\\+7 ([0-9]{3}\) [0-9]{3}[\-][0-9]{2}[\-][0-9]{2}"
+         type="phone" required title="(000) 000-00-00" class="phone_mask" type="text" name="phone" placeholder="" required>
+
+    				</div>
+
+
+    				<div class="important">
+              <label for="login"><b>Пароль <span>*</span></b></label>
+    					<input  type="password" name="password" placeholder="" required>
+    				<p class="hiden-p">Пароль должен содержать заглавную букву, строчную букву и цифру.</p>
+    				</div>
+
+
+
+    				<div class="important">
+              <label for="login"><b>E-mail <span>*</span></b></label>
+    					<input type="email" name="email" placeholder="" required>
+
+    				</div>
+
+    				<div>
+
+    				</div>
+            	<?= $this->render('registration-152-federal-law', 'library/personalDataNotice') ?>
+    				<input class="nextsumb" type="button" value="<?= $this->translate('registration_do') ?>">
+
+
+    			</form>
+            <div id="result_form"></div>
+    		</div>
+    	</div>
+    </div>
+
+  </div>
+  <div class="fix-wrapper auth">
+    <h3>ВОЙТИ В ЛИЧНЫЙ КАБИНЕТ</h3>
+    <form   id="authorize" action="/users/login_do/" method="post">
+      <div class="forclosest logininput">
+        <label for="login"><b>Логин <span class="grayc">(или телефон)</span></b></label>
+        <input type="text" autocomplete="off" id="login" name="login" class="textinputs" value="demo"/>
+      </div>
+      <div class="forclosest passwodrinput">
+        <label for="password"><b>Пароль <span>* (заполните поле)</span> </b></label>
+        <input type="password" id="password" name="password" class="textinputs" value="demo"/>
+      </div>
+      <div class="wrapper-tabs-form">
+        <div class="wrapper-sumbit">
+          <p>
+           <input class="submitautoh" type="button" value="Войти"/>
+          </p>
+            <input style="display:none;" type="hidden" name="from_page" value="/help/" />
+        </div>
+
+        <div class="wrapper-dop-tabs">
+          <!-- <p>
+          <a href="%pre_lang%/users/registrate/" class="sub">Зарегистрироваться</a>.
+          </p> -->
+          <p id="errorlogauth"></p>
+          <p>
+
+          <a href="javascript:void(0);" class="sub zab">Забыли пароль? </a>
+          </p>
+        </div>
+
+      </div>
+
+     </form>
+
+
+
+     <div class="foget-passwodr zab">
+       <?php
+       $action = $this->getCommonVar('pre_lang') . '/users/forget_do/';
+       ?>
+
+       <div class="np">
+         <div class="container">
+           <div class="row">
+             <h1><?= $this->escape($variables['header']) ?></h1>
+           </div>
+         </div>
+       </div>
+
+       <div class="fbbb">
+         <div class="obsh">
+           <div class="gr">
+             <form id="forget" method="post" action="<?= $action ?>">
+
+
+               <div class="dispn">
+                 <label class="unposition">
+                   <input type="radio" id="forget_email" name="choose_forget" required checked />
+                   <span></span>
+                   <p>
+                     <?= $this->translate('restore_by_email') ?>
+                   </p>
+                 </label>
+               </div>
+                    <h3>Укажите свой Email</h3>
+                    <p>В течении нескольких минут мы пришлем Вам письмо для восстановленя пароля.</p>
+               <div class="important">
+                  <label for="login"><b>Введите Email <span>*</span></b></label>
+                 <input type="text" name="forget_login" placeholder="" required />
+
+               </div>
+
+               <input class="givememypass" type="submit" value="<?= $this->translate('send_password') ?>" />
+               <br>
+               <p class="backavtorize">Вернуться к авторизации</p>
+             </form>
+           </div>
+         </div>
+       </div>
+
+     </div>
+  </div>
+</div>

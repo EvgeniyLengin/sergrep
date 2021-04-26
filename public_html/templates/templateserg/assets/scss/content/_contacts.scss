@@ -1,0 +1,38 @@
+.main-contacts {
+  min-height: 1px;
+}
+
+.main-contacts-title {
+  font-size: 29.17px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.main-contacts .home-contacts .home-contacts-wrap .home-contacts-block-right .home-contacts-after:before {
+  display: none;
+}
+
+.main-contacts .home-contacts .home-contacts-wrap .home-contacts-block-right .home-contacts-after:after {
+  display: none;
+}
+
+.main-contacts-title {
+  color: #665564;
+  font-weight: 600;
+
+}
+body {
+  color: #665564;
+
+}
+
+.home-contacts .home-contacts-wrap .home-contacts-block-right p a {
+  color: #665564;
+}
+@media screen and (max-width:480px) {
+  .home-contacts .home-contacts-wrap .home-contacts-block-left .main-btn {
+    margin-left: 50%;
+transform: translate(-50%, 0px);
+margin-top: 40px;
+  }
+}

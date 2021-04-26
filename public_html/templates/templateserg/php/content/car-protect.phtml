@@ -1,0 +1,226 @@
+<?php
+$page = $variables['page'];
+?>
+<main class="main-business main-car">
+  <div class="container">
+      <?= $this->render(false, 'library/breadcrums')  ?>
+    <h2 class="main-business-title">
+      <?= $page->getValue('title'); ?>
+    </h2>
+    <div class="main-business-wired-kit">
+      <div class="main-business-wired-kit-wrap1">
+        <div class="main-business-wired-kit-block1">
+          <img src="<?= $page->getValue('kartinka_avtomobil'); ?>" alt="" class="main-business-wired-kit-block1-img">
+        </div>
+        <div class="main-business-wired-kit-block2 main-car-block1">
+          <p class="main-business-wired-kit-block2-text1">
+            Стоимость подключения
+          </p>
+          <p class="main-business-wired-kit-block2-text2">
+            от <span class="bussines-color"><?=  $page->getValue('stoimost_podklyucheniya_cena'); ?></span> руб.
+          </p>
+          <div class="bussines-separator"></div>
+          <p class="main-business-wired-kit-block2-text1">
+            Размер абон. платы
+          </p>
+          <p class="main-business-wired-kit-block2-text2">
+            <span class="bussines-color"><?= $page->getValue('stoimost_abonentskoj_platy_cena'); ?></span> руб./мес.
+          </p>
+        </div>
+        <div class="main-business-wired-kit-block2 main-car-block2">
+          <button type="button" name="button" class="main-btn bussines-btn car">
+            оставить заявку
+          </button>
+          <p class="main-business-wired-kit-block2-text3">
+            <?= $page->getValue('tekst_pod_knopkoj_chto_vklyuchaet'); ?>
+          </p>
+        </div>
+      </div>
+      <div class="main-business-wired-kit-wrap2 main-business-wired-kit-wrap2-active">
+        <div class="main-car-wrap">
+          <div class="main-car-block1">
+            <h2 class="main-car-title">
+              <?= $page->getValue('zagolovok_pod_kartinkoj'); ?>
+            </h2>
+              <?= $page->getValue('tekst_pod_kartinkoj'); ?>
+          </div>
+          <div class="main-car-block2">
+            <div class="main-car-block2-box">
+              <p class="main-car-block2-box-icon">01.</p>
+              <p class="main-car-block2-box-title">
+                <?= $page->getValue('zagolovok_pervogo_punkta');?>
+              </p>
+              <p class="main-car-block2-box-text">
+                <?= $page->getValue('tekst_pervogo_punka');?>
+              </p>
+            </div>
+            <div class="main-car-block2-box">
+              <p class="main-car-block2-box-icon">02.</p>
+              <p class="main-car-block2-box-title">
+                <?= $page->getValue('zagolovok_vtorogo_punkta'); ?>
+              </p>
+              <p class="main-car-block2-box-text">
+                <?= $page->getValue('tekst_vtorogo_punkta'); ?>
+              </p>
+            </div>
+            <div class="main-car-block2-box">
+              <p class="main-car-block2-box-icon">03.</p>
+              <p class="main-car-block2-box-title">
+                <?= $page->getValue('zagolovok_tretego_punkta'); ?>
+              </p>
+              <p class="main-car-block2-box-text">
+                <?= $page->getValue('tekst_tretego_punkta'); ?>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="main-business-basic-kit-wrap1 main-business-basic-kit-wrap1-active">
+          <div class="main-business-basic-kit-block1">
+            <img src="<?= $page->getValue('kartinka_pribora'); ?>" alt="" class="main-business-basic-kit">
+          </div>
+          <div class="main-business-basic-kit-block2">
+            <div class="main-business-basic-kit-icon-block">
+              <img src="assets/images/bussines/bussnes-icon1.png" alt="">
+              <span class="main-business-basic-kit-icon-block-text">
+              <?= $page->getValue('pervyj_punkt_opisaniya_pribora'); ?>
+              </span>
+            </div>
+            <div class="main-business-basic-kit-icon-block">
+              <img src="assets/images/bussines/bussnes-icon2.png" alt="">
+              <span class="main-business-basic-kit-icon-block-text">
+                <?= $page->getValue('vtoroj_punkt_opisaniya_pribora'); ?>
+              </span>
+            </div>
+            <div class="main-business-basic-kit-icon-block">
+              <img src="assets/images/bussines/bussnes-icon3.png" alt="">
+              <span class="main-business-basic-kit-icon-block-text">
+                <?= $page->getValue('tretij_punkt_opisaniya_pribora'); ?>
+              </span>
+            </div>
+            <div class="main-business-basic-kit-icon-block">
+              <img src="assets/images/bussines/bussnes-icon4.png" alt="">
+              <span class="main-business-basic-kit-icon-block-text">
+                <?= $page->getValue('chetvertyj_punkt_opisaniya_pribora'); ?>
+              </span>
+            </div>
+          </div>
+          <div class="main-business-basic-kit-block3">
+            <p class="main-business-basic-kit-block3-title">
+                  <?= $page->getValue('zagolovok_teksta_o_pribore'); ?>
+            </p>
+            <?= $page->getValue('tekst_o_pribore'); ?>
+          </div>
+        </div>
+      </div>
+      <div class="js_summblock main-business-wired-kit-wrap3">
+        <div class="main-business-wired-kit-options11">
+          <div class="js_parent main-business-wired-kit-options1-block1">
+            <h3 class="main-business-wired-kit-options-title">
+              Дополнительные опции
+            </h3>
+            <h3 class="main-business-wired-kit-options-title main-business-wired-kit-options-title-none">
+              Подключение
+            </h3>
+            <h3 class="main-business-wired-kit-options-title main-business-wired-kit-options-title-none">
+              Абонентская плата
+            </h3>
+          </div>
+
+          <?php
+          $spispreim = $page->getValue('dopolnitelnye_uslugi_ohrany_avto');
+            $p = 90;
+          foreach ($spispreim as $key => $value) {
+
+          $onepreim1 = $this->getObjectById($value);
+          $cenapodcl = $onepreim1->getValue('stoimost_podklyucheniya1');
+          $cenaabon = $onepreim1->getValue('abonentskaya_plata1');
+
+          ?>
+
+          <div class="js_parent main-business-wired-kit-options1-block2">
+            <div class="main-business-wired-kit-options-icon-box">
+              <span class="icon-block click-checked<?= $p ?> "></span>
+              <p class="main-business-wired-kit-options-icon-box-text click-checked<?= $p ?>">
+                <?= $onepreim1->getValue('nazvanie_dop_opcii') ?>
+                <span class="mobile-title-text">Подключение:</span>
+                <span class="mobile-title-text">Абонентская плата:</span>
+              </p>
+              <a href="#" class="main-business-wired-kit-options-icon-box-link">i</a>
+            </div>
+            <p class="js_podkl main-business-wired-kit-options-icon-box-text width-box click-checked<?= $p ?>">
+              <span class="onprc" id="dop-price-id"><?= $cenapodcl ?></span> <?php if ((int)$cenapodcl > 0 ) { echo 'руб.';  } else { echo ''; }?>
+
+              <span class="mobile-text-text"><span id="dop-price-id"><?= $cenaabon ?></span> <?php if ((int)$cenaabon > 0 ) { echo 'руб.';  } else { echo ''; }?></span>
+            </p>
+            <p class="js_abon main-business-wired-kit-options-icon-box-text main-business-wired-kit-options-icon-box-text-none width-box click-checked<?= $p ?>">
+              <span id="dop-price-id"><?= $cenaabon ?></span> <?php if ((int)$cenaabon > 0 ) { echo 'руб.';  } else { echo ''; }?>
+            </p>
+            <div class="main-business-wired-kit-options-icon-box-input">
+              <input type="checkbox" name="checkbox<?= $p ?>" >
+            </div>
+          </div>
+
+          <?php
+          $p++;
+          }
+
+          ?>
+
+        </div>
+
+
+
+        <div class="main-business-wired-kit-options2">
+          <p class="main-business-wired-kit-options2-title">
+            Итоговая стоимость
+          </p>
+          <p class="main-business-wired-kit-options2-text1">
+            Подключение
+          </p>
+          <p class="main-business-wired-kit-options2-text2">
+            от <span id="itogPrice"><?=  $page->getValue('stoimost_podklyucheniya_cena'); ?></span> руб.
+          </p>
+          <p class="main-business-wired-kit-options2-text1">
+            Абон. плата
+          </p>
+          <p class="main-business-wired-kit-options2-text2">
+            <span id="itogAbon"><?= $page->getValue('stoimost_abonentskoj_platy_cena'); ?></span> руб./мес.
+          </p>
+        </div>
+      </div>
+      <div class="business-block-link-wrap">
+        <a href="<?= $page->getValue('ssylka_na_stranicu_s_dop_uslugami'); ?>" class="business-block-link">
+          Все дополнительные услуги
+        </a>
+      </div>
+    </div>
+    <div class="main-box__wrap1">
+      <div class="main-box__left">
+        <h2 class="title-h2">
+          <?= $page->getValue('zagolovok_prilozhenie'); ?>
+        </h2>
+        <p class="main-box__left_text">
+          <?= $page->getValue('vtoraya_strochka_zagolovk'); ?>
+        </p>
+        <?= $page->getValue('tekst_o_prilozhenii'); ?>
+        <div class="main-box__left_wrap">
+          <a href="<?= $page->getValue('epl_stor_ssylk');?>">
+            <img src="assets/images/home/app-store.png" class="main-box__left_img" alt="">
+          </a>
+          <a href="<?=  $page->getValue('gugl_plej_ssylk');?>">
+            <img src="assets/images/home/google-play.png" class="main-box__left_img1" alt="">
+          </a>
+        </div>
+      </div>
+      <div class="main-box__right">
+        <div class="main-box__right_img">
+          <div class="main-box__right_img-element"></div>
+          <a href="javascript:void(0);">
+            <img src="<?= $page->getValue('kartinka_telefon'); ?>" alt="">
+          </a>
+          <div class="main-box__right_img-element1"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

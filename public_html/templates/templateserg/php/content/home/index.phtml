@@ -1,0 +1,413 @@
+<script src="https://www.google.com/recaptcha/api.js?render=6LfXSb4ZAAAAAGHOywGY_06poYwXguWHkeikqstb"></script>
+<script>
+	grecaptcha.ready(function () {
+		grecaptcha.execute('6LfXSb4ZAAAAAGHOywGY_06poYwXguWHkeikqstb', { action: 'contact' }).then(function (token) {
+			var recaptchaResponse = document.getElementById('recaptchaResponse');
+			recaptchaResponse.value = token;
+		});
+	});
+</script>
+
+<?php
+/**
+ * Главная страница:
+ *   - Блок со слайдером
+ *   - Блок акции с таймером
+ *   - Блок "Наши преимущества"
+ *   - Блок с новостями и опросом
+ *
+ * @var umiTemplaterPHP|ViewPhpExtension|DemomarketPhpExtension $this
+ * @var array $variables
+ */
+
+
+?>
+<?php
+
+$homepage = $this->getPageById(312);
+?>
+
+
+
+
+
+
+
+ <div class="home-slider-witch_banner">
+	 <!-- replaced slider witch banner a 26_04 -->
+<div class="wrapper-for-banner">
+	<div class="wrapper_content_banner">
+		<div class="wrapper_block">
+			<h2><?= $homepage->getValue('banner_title') ?></h2>
+			<?= $homepage->getValue('banner_text') ?>
+			<span class="makup"><?= $homepage->getValue('markup') ?></span>
+			<button class="actv-call callback-on" type="button" name="button">ОСТАВИТЬ ЗАЯВКУ</button>
+		</div>
+	</div>
+<img class="homepage_banner" src="<?= $homepage->getValue('banner_kartinka'); ?>" alt="">
+</div>
+
+ </div>
+ <section>
+   <div class="container">
+     <div class="main-box">
+       <div class="main-box__wrap">
+         <div class="main-box__left">
+           <h2 class="title-h2">
+                  <?= $homepage->getValue('zagolovok_stanicy') ?> <br> <span class="title-h2-color"><?= $homepage->getValue('zagolovok_stranicy_vtoraya_strochka') ?></span>
+           </h2>
+           <p class="main-box__left_text">
+
+               <?= $homepage->getValue('kontent_posle_zagolovka_1_stroka') ?>
+           </p>
+           <span class="main-box__left_text1">
+               <?= $homepage->getValue('kontent_posle_zagolovka_2_stroka') ?>
+           </span>
+           <div class="main-box__left_wrap">
+
+             <a href="<?= $homepage->getValue('appstore_ssylka') ?>" target="_blank" >
+               <img src="assets/images/home/app-store.png" class="main-box__left_img" alt="">
+             </a>
+             <a href="<?= $homepage->getValue('googleplay_ssylka') ?>" target="_blank" >
+               <img src="assets/images/home/google-play.png" class="main-box__left_img1" alt="">
+             </a>
+           </div>
+         </div>
+         <div class="main-box__right">
+           <div class="main-box__right_img">
+             <div class="main-box__right_img-element"></div>
+             <a href="javascript:void(0);">
+               <img src=" <?= $homepage->getValue('pervaya_kartinka_sprava_ot_teksta') ?>" alt="">
+             </a>
+             <div class="main-box__right_img-element1"></div>
+           </div>
+         </div>
+       </div>
+       <div class="main-box__wrap-one">
+         <div class="main-box__wrap-icon-block">
+           <img src="<?= $homepage->getValue('kartinka_pervogo_preimuwestva') ?>" class="main-box__wrap-icon" alt="">
+           <p class="main-box__wrap-icon-text">
+             <?= $homepage->getValue('tekst_pervogo_preimuwestva') ?>
+           </p>
+         </div>
+         <div class="main-box__wrap-icon-block">
+           <img src="<?= $homepage->getValue('kartinka_vtorogo_preimuwestva') ?>" class="main-box__wrap-icon icon1 margin-left" alt="">
+           <p class="main-box__wrap-icon-text">
+             <?= $homepage->getValue('tekst_vtorogo_preimuwestva') ?>
+           </p>
+         </div>
+         <div class="main-box__wrap-icon-block">
+           <img src="<?= $homepage->getValue('kartinka_tretego_preimuwestva') ?>" class="main-box__wrap-icon icon2 margin-left1" alt="">
+           <p class="main-box__wrap-icon-text">
+             <?= $homepage->getValue('tekst_tretego_preimuwestva') ?>
+           </p>
+         </div>
+       </div>
+       <div class="main-box__wrap-two">
+         <div class="main-box__left-two">
+           <div class="main-box__left-two-element"></div>
+           <a href="<?= $homepage->getValue('blok_1_ssylka') ?>">
+             <img src="<?= $homepage->getValue('blok_1_kartinka') ?>" alt="">
+             <span class="main-box__left-two-color">          <?= $homepage->getValue('blok_1_tekst') ?> </span>
+           </a>
+           <div class="main-box__left-two-element1"></div>
+         </div>
+         <div class="main-box__right-two">
+           <h2 class="title-h2">
+      <?= $homepage->getValue('zagolovok_bloka') ?>           </h2>
+           <span class="main-box__right-two-text">
+          <?= $homepage->getValue('tekst_bloka') ?>
+</span>
+            <a href="<?= $homepage->getValue('ssylka_dlya_knopki') ?> ">
+              <button type="button" class="main-btn">
+                Узнать больше
+                <span class="flaticon-arrow-pointing-to-right"></span>
+              </button>
+            </a>
+
+         </div>
+       </div>
+       <div class="main-box__wrap-three">
+         <div class="main-box-one">
+           <a href="<?= $homepage->getValue('blok_2_ssylka') ?>" class="main-box-one-link">
+             <img src="<?= $homepage->getValue('blok_2_kartinka') ?>" alt="">
+             <span class="main-box-one-color"><?= $homepage->getValue('blok_2_tekst') ?></span>
+           </a>
+           <a href="<?= $homepage->getValue('blok_3_ssylka') ?>" class="main-box-one-link">
+             <img src="<?= $homepage->getValue('blok_3_kartinka') ?>" alt="">
+             <span class="main-box-one-color1"><?= $homepage->getValue('blok_3_tekst') ?></span>
+           </a>
+         </div>
+       </div>
+       <div class="main-box-new">
+         <div class="main-box-new-title-wrap">
+			 <?php
+
+			 if(true) {
+				 ?>
+           <h2 class="title-h2">
+             Наши новости
+           </h2>
+           <div class="home-pagination">
+             <div class="pagination-number">
+
+             </div>
+             <div class="pagination-arrow">
+               <a href="#" class="pagination-arrow-link1 flaticon-arrow-pointing-to-right"></a>
+               <a href="#" class="pagination-arrow-link2 flaticon-arrow-pointing-to-right"></a>
+             </div>
+           </div>
+         </div>
+         <div class="main-box-new-wrap">
+
+
+<?php
+
+
+
+$news = ($this->macros('news', 'lastlist', array('osnovnaya-lenta', null, 12, false )));
+$newslistwiew = $news['items'];
+
+
+
+foreach ($newslistwiew as $key => $value) {
+  $onenewspage = $this->getPageById($value['id']);
+  ?>
+
+
+             <div class="main-box-new-item">
+               <img src="<?= $onenewspage->getValue('anons_pic')?>" class="main-box-new-img" alt="">
+               <h3 class="title-h3">
+                <?= $onenewspage->getValue('h1')?>
+               </h3>
+               <span class="main-box-new-text">
+        <?= $onenewspage->getValue('anons_novosti_dlya_glavnoj')?>
+            </span>
+               <div class="main-box-new-data-wrap">
+                 <p class="main-box-new-data">
+                  <?php
+                $time = date('d.m.Y', $value['publish_time']);
+                echo $time;
+                ?>
+                 </p>
+                 <a href=" <?= $value['link']?> " class="main-box-new-data-link">
+                   Прочитать
+                 </a>
+               </div>
+             </div>
+
+
+
+<?php
+}
+
+
+
+}
+ ?>
+
+
+
+
+
+
+         </div>
+
+
+				 <?php
+if (true) {
+
+
+
+				 $page = $this->getPageById(318); ?>
+
+				 <div id="сustomer-reviews" class="main-about-wrap-seven">
+		       <h3 class="main-about-seven-title">
+		         Отзывы клиентов
+		       </h3>
+
+		       <div class="main-about-seven-review">
+		         <div id="dg-container" class="dg-container">
+		   				<div class="dg-wrapper">
+
+		               <?php
+		             $slideOtz = $page->getValue('slajder_s_otzyvami');
+
+
+		               foreach ($slideOtz as $key => $value) {
+		                 $oneslideotz = $this->getObjectById($value);
+		                 ?>
+
+		                 <a href="<?=  $oneslideotz->getValue('ssylka_kuda_vedet_slajd_pri_klike'); ?>" class="dg-about-box-link" target="_blank" >
+		                   <div class="dg-about-box">
+		                     <span class="dg-about-icon flaticon-left-quote"></span>
+		                     <span class="dg-about-text">
+		                       <?php $mm = $oneslideotz->getValue('osnovnoj_tekst');
+		                         $mm = explode("\n", $mm);
+		                         $last_tmp = count($mm)-1;
+		                         $mm[$last_tmp] = str_replace('</p>', '<span class="dg-about-icon1 flaticon-right-quote-sign"></span> </p>', $mm[$last_tmp] );
+		                       $mm = implode("\n", $mm);
+		                       echo $mm;
+		                          ?>
+
+		                     </span>
+		                     <div class="dg-about-wrap">
+		                       <div class="dg-about-name">
+		                         <p class="dg-about-name-fio">
+		                           <?= $oneslideotz->getValue('imya') ?>
+		                         </p>
+		                         <p class="dg-about-name-prof">
+		                           <?= $oneslideotz->getValue('dolzhnost') ?>
+		                         </p>
+		                       </div>
+		                       <div class="dg-about-img">
+		                         <img src="<?= $oneslideotz->getValue('foto') ?>" alt="">
+		                       </div>
+		                     </div>
+		                   </div>
+		                 </a>
+
+
+		                  <?php
+		                 }
+
+		               ?>
+
+
+		   				</div>
+		   				<nav class="about-arrow">
+		   					<span class="dg-prev flaticon-arrow-pointing-to-right"></span>
+		   					<span class="dg-next flaticon-arrow-pointing-to-right"></span>
+		   				</nav>
+		   			</div>
+		       </div>
+		       <div class="main-about-seven-btn">
+		         <button type="button" name="button" id="review-btn" class="main-btn about-btn">
+		           оставить отзыв
+		         </button>
+		       </div>
+		     </div>
+
+
+
+
+
+
+
+
+
+
+				 <div id="our-partners" class="main-about-wrap-eight">
+		       <h3 class="main-about-eight-title">
+		         Наши партнеры
+		       </h3>
+
+
+
+		       <div class="main-about-eight-slider">
+		         <?php
+		         $partn = $page->getValue('slajder_s_partnerami');
+
+		         foreach ($partn as $key => $value) {
+		               $kart = $value->getFilePath(true); ?>
+		               <div class="main-about-eight-slider-item">
+		                 <span class="main-about-eight-slider-item-box"></span>
+		                 <img src="<?= $kart ?>" alt="">
+		               </div>
+
+		       <?php
+		       }
+
+		   }
+		        ?>
+		       </div>
+		     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+         <h2 class="title-h2">
+           Контактная информация
+         </h2>
+       </div>
+     </div>
+   </div>
+ </section>
+ <section class="map">
+   <img src="<?= $homepage->getValue('shema_proezda_kartinka') ?>" alt="">
+ </section>
+<section class="home-contacts">
+	<div class="container">
+		<form id="have_questions_contact_aj_form" action="/webforms/send" method="post">
+			<div class="home-contacts-wrap">
+				<input type="hidden" name="recaptcha_response" id="recaptchaResponse">
+				<input type="hidden" name="system_form_id" value="232">
+				<input type="hidden" name="ref_onsuccess" value="/webforms/posted/">
+				<input type="hidden" name="system_email_to" value="936">
+				<input type="hidden" id="result_form" name="result" value="">
+				<div class="home-contacts-block-left">
+					<p class="home-contacts-block-left-text">Есть вопросы? Свяжитесь с нами:</p>
+					<p class="home-contacts-input">
+						<input type="text" name="data[new][imya]" id="imya_have_questions" placeholder="Имя (обязательное поле)" required>
+					</p>
+					<p class="home-contacts-input">
+						<input type="email" name="data[new][email]" id="email_have_questions" placeholder="E-mail (обязательное поле)" required>
+					</p>
+					<p class="home-contacts-input">
+						<input type="tel" name="data[new][telefon]" id="tel_have_questions" placeholder="Телефон (обязательное поле)" required>
+					</p>
+					<p class="home-contacts-textarea">
+						<textarea name="data[new][soobwenie]" id="msg_have_questions" placeholder="Сообщение (обязательное поле)" required></textarea>
+					</p>
+					<p class="home-contacts-checkbox">
+						<input type="checkbox" name="data[new][obrabotka_personalnyh_dannyh]" id="check_choise" required><label for="check_choise">Я согласен(а) на обработку моих персональных данных</label>
+					</p>
+					<img src="assets/images/home/google.png" class="home-contacts-google" alt="" style="display: none;">
+					<button type="submit" class="main-btn">Отправить</button>
+					<div class="err_msg_block"></div>
+				</div>
+				<div class="home-contacts-block-right">
+					<p class="home-contacts-after"><span class="flaticon-house"></span><?= $homepage->getValue('adres_v_forme') ?></p>
+					<p><span class="flaticon-phone-call"></span>
+						<a href="tel:+  <?= $homepage->getValue('pervyj_telefon_forma_dlya_robota') ?>">  <?= $homepage->getValue('pervyj_telefon_forma_dlya_cheloveka') ?></a>
+						<a href="tel:+  <?= $homepage->getValue('vtoroj_telefon_forma_dlya_robota') ?>">  <?= $homepage->getValue('vtoroj_chelovek_forma_dlya_cheloveka') ?></a>
+					</p>
+					<p><span class="flaticon-e-mail-envelope"></span>
+						<a href="mailto:<?= $homepage->getValue('email_v_forme_mozhet_otlichatsya_ot_futera') ?>"><?= $homepage->getValue('email_v_forme_mozhet_otlichatsya_ot_futera') ?></a>
+					</p>
+					<p class="home-contacts-block-right-social">
+						<a href="<?= $homepage->getValue('pervaya_socialnaya_sest_ssylka')  ?>" target="_blank" >  <img src="<?= $homepage->getValue('kartinka_dlya_pervoj') ?>" alt=""></a>
+						<a href="<?= $homepage->getValue('vtoraya_socialnaya_sest_ssylka') ?>" target="_blank">  <img src="<?= $homepage->getValue('kartinka_dlya_vtoroj') ?>" alt=""></a>
+						<a href="<?= $homepage->getValue('tretya_socialnaya_sest_ssylka') ?>" target="_blank" >  <img src="<?= $homepage->getValue('kartinka_dlya_tretej') ?>" alt=""></a>
+						<a href="<?= $homepage->getValue('chetvertaya_socialnaya_sest_ssylka') ?>" target="_blank" >  <img src="<?= $homepage->getValue('kartinka_dlya_chetvertoj') ?>" alt=""></a>
+					</p>
+					<div class="home-contacts-img-wrap">
+						<img src="<?= $homepage->getValue('kartinka_v_forme') ?>" alt="">
+						<div class="home-contacts-element1"></div>
+						<div class="home-contacts-element2"></div>
+					</div>
+				</div>
+			</div>
+		</form>
+   </div>
+   <div class="main-info-btn-wrap">
+     <p class="main-info-btn-text">
+       Не нашли, что искали? Cвяжитесь с нами, чтобы задать вопрос:
+     </p>
+     <button type="button" class="main-btn">
+       Связаться
+     </button>
+   </div>
+ </section>

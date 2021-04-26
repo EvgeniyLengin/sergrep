@@ -1,0 +1,659 @@
+.main-about {
+  line-height: 1.5em;
+}
+
+.main-about-wrap-one {
+  display: flex;
+  margin-top: 22px;
+  @include max-screen(1075px) {
+    flex-direction: column;
+    align-items: center;
+  }
+  .main-about-one-blok-left {
+    flex-basis: 50%;
+    .main-about-one-title {
+      font-size: 29.17px;
+      margin-bottom: 15px;
+      letter-spacing: 0.01em;
+      @include max-screen(576px) {
+        line-height: 1.4;
+      }
+      @include ptSans(400);
+    }
+    .main-about-one-text p {
+      margin-bottom: 15px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  .main-about-one-blok-right {
+    flex-basis: 50%;
+    max-width: 600px;
+    min-height: 173px;
+    background-image: url(../images/about/Strelka.png);
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 13px;
+    position: relative;
+    @include max-screen(1075px) {
+      flex-wrap: wrap;
+      width: 100%;
+      height: auto;
+      margin-top: 30px;
+      padding-top: 30px;
+    }
+    @include max-screen(630px) {
+      background-image: none;
+    }
+    .main-about-one-blok-right-link {
+      width: 230px;
+      height: 54px;
+      box-sizing: border-box;
+      border: 1px solid $silverT;
+      color: $silverT;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      position: absolute;
+      background-color: #ffffff;
+      transition: all .5s ease;
+      @include max-screen(1075px) {
+        position: static;
+      }
+      @include max-screen(489px) {
+        margin-bottom: 25px;
+      }
+      .main-about-one-blok-right-link-text {
+        font-size: 12.5px;
+        text-transform: uppercase;
+      }
+      .flaticon-play-button-1:before {
+        font-size: 30px;
+      }
+      .flaticon-testimonial:before {
+        font-size: 30px;
+      }
+      .flaticon-high-five:before {
+        font-size: 30px;
+      }
+      &:hover {
+        border: 1px solid $btn;
+        .main-about-one-blok-right-link-text {
+          color: $btn;
+        }
+        .flaticon-play-button-1:before {
+          color: $btn;
+        }
+        .flaticon-testimonial:before {
+          color: $btn;
+        }
+        .flaticon-high-five:before {
+          color: $btn;
+        }
+      }
+    }
+    .main-about-one-blok-right-link1 {
+      left: 58px;
+      top: 40px;
+      padding-left: 38px;
+      padding-right: 43px;
+    }
+    .main-about-one-blok-right-link2 {
+      right: 0;
+      top: 40px;
+      padding-left: 38px;
+      padding-right: 30px;
+    }
+    .main-about-one-blok-right-link3 {
+      bottom: 0;
+      left: 36%;
+      padding-left: 38px;
+      padding-right: 43px;
+    }
+  }
+}
+
+.main-about-wrap-two {
+  margin-top: 65px;
+  .main-about-two-title {
+    text-align: center;
+    font-size: 22.92px;
+    margin-bottom: 22px;
+    letter-spacing: 0.01em;
+  }
+  .main-about-two-text p {
+    text-align: center;
+    max-width: 575px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.main-about-wrap-three {
+  max-width: 980px;
+  margin: 33px auto 69px;
+  display: flex;
+  justify-content: space-between;
+  @include max-screen(1000px) {
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  .main-about-three-box {
+    width: 138px;
+    height: 90px;
+    border: 1px solid transparent;
+    text-align: center;
+    color: $silverT;
+    box-sizing: border-box;
+    transition: all .5s ease;
+    .flaticon-briefcase:before {
+      font-size: 32px;
+    }
+    .flaticon-apartment:before {
+      font-size: 32px;
+    }
+    .flaticon-engineer:before {
+      font-size: 30px;
+    }
+    .flaticon-steering-wheel:before {
+      font-size: 30px;
+    }
+    .flaticon-sos:before {
+      font-size: 30px;
+    }
+    .flaticon-project:before {
+      font-size: 29px;
+    }
+    .main-about-three-icon {
+      display: block;
+      margin-top: 15px;
+      margin-bottom: 15px;
+    }
+    .main-about-three-text {
+      display: block;
+      font-size: 12.5px;
+      text-transform: uppercase;
+    }
+    &:hover {
+      color: $btn;
+      border: 1px solid $btn;
+    }
+  }
+}
+
+.main-about-wrap-four {
+  .main-about-four-title {
+    text-align: center;
+    font-size: 22.92px;
+    margin-bottom: 22px;
+    letter-spacing: 0.01em;
+  }
+  .main-about-four-text p {
+    text-align: center;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+        max-width: 602px;
+        margin:0 auto;
+  }
+}
+
+.main-about-wrap-five {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 39px;
+  @include max-screen(1200px) {
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  .main-about-five-box {
+    flex-basis: 16%;
+    @include max-screen(1200px) {
+      flex-basis: 250px;
+      margin-bottom: 30px;
+    }
+    .main-about-five-box-number {
+      color: $btn;
+      font-size: 20.83px;
+      @include ptSans(700);
+      margin-bottom: 8px;
+    }
+    .main-about-five-box-title {
+      color: $btn;
+      font-size: 12.5px;
+      text-transform: uppercase;
+      position: relative;
+      margin-bottom: 21px;
+      &::after {
+        position: absolute;
+        content: '';
+        width: 30px;
+        height: 2px;
+        background-color: $silverT;
+        left: 0;
+        bottom: -16px;
+      }
+    }
+    .main-about-five-box-text {
+      font-size: 12.5px;
+      line-height: 1.5em;
+      @include max-screen(1200px) {
+        max-width: 200px;
+      }
+      @include max-screen(529px) {
+        max-width: none;
+      }
+    }
+  }
+}
+
+.main-about-wrap-six {
+  margin-top: 47px;
+  .main-about-six-title {
+    text-align: center;
+    font-size: 22.92px;
+    margin-bottom: 22px;
+    letter-spacing: 0.01em;
+  }
+  .main-about-six-video {
+    max-width: 650px;
+    max-height: 300px;
+    margin: 41px auto 0;
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+}
+
+.main-about-wrap-seven {
+  margin-top: 55px;
+  .main-about-seven-title {
+    text-align: center;
+    font-size: 22.92px;
+    margin-bottom: 28px;
+    letter-spacing: 0.01em;
+  }
+  .main-about-seven-btn {
+    .about-btn {
+      margin: 0 auto;
+    }
+  }
+}
+
+.about-arrow {
+  width: 95px !important;
+  margin-left: 0 !important;
+  bottom: 30px !important;
+  transform: translateX(-50%);
+  span {
+    display: inline-block;
+    width: 40px !important;
+    height: 40px !important;
+    border: 1px solid $btn;
+    text-indent: inherit !important;
+    text-align: center;
+    padding-top: 9px;
+  }
+  .dg-prev {
+    transform: rotate(180deg);
+  }
+  .flaticon-arrow-pointing-to-right:before {
+    color: $btn;
+    font-size: 16px;
+  }
+}
+
+.dg-container {
+  // height: 500px !important;
+}
+
+.dg-container nav {
+  z-index: 1;
+}
+.dg-wrapper a img {
+  padding: 0 !important;
+}
+.dg-wrapper {
+  width: 650px !important;
+  height: 350px !important;
+  @include max-screen(1200px) {
+    width: 500px !important;
+    height: auto !important;
+  }
+  @include max-screen(576px) {
+    width: 400px !important;
+  }
+  @include max-screen(430px) {
+    width: 300px !important;
+  }
+  @include max-screen(330px) {
+    width: 290px !important;
+  }
+  a.dg-about-box-link.dg-center {
+    filter: blur(0px);
+  }
+  a.dg-about-box-link {
+    width: 650px !important;
+    height: 350px !important;
+    border: 1px solid rgba(102, 101, 101, 0.6);
+    padding: 65px 75px 50px 130px;
+    background-color: #ffffff;
+    opacity: 1 !important;
+    filter: blur(2px);
+    @include max-screen(1200px) {
+      width: 500px !important;
+      height: auto !important;
+      padding: 35px 40px 25px 60px;
+    }
+    @include max-screen(576px) {
+      width: 400px !important;
+      padding: 20px;
+    }
+    @include max-screen(430px) {
+      width: 300px !important;
+    }
+    @include max-screen(330px) {
+      width: 290px !important;
+    }
+    .dg-about-box {
+      position: relative !important;
+      top: 0;
+      bottom: auto;
+      width: 100%;
+      height: auto;
+      display: block !important;
+      .dg-about-icon.flaticon-left-quote:before {
+        position: absolute;
+        top: -19px;
+        left: -76px;
+        color: rgba(102, 101, 101, 0.3);
+        font-size: 46px;
+        @include max-screen(1200px) {
+          left: -49px;
+          font-size: 40px;
+        }
+        @include max-screen(576px) {
+          display: none;
+        }
+      }
+      .dg-about-text  {
+        display: block;
+        p {
+          @include ptSans(400);
+          font-size: 12.5px;
+          line-height: 1.7em;
+          text-align: left;
+          color: $silverT !important;
+        }
+
+        .flaticon-right-quote-sign:before {
+          color: rgba(102, 101, 101, 0.3);
+          display: inline-block;
+          position: relative;
+          top: 10px;
+          left: 10px;
+          font-size: 20px;
+        }
+      }
+      .dg-about-wrap {
+        display: flex !important;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        margin-top: 40px;
+        position: static !important;
+        .dg-about-name {
+          max-width: 260px;
+          position: static !important;
+          display: block !important;
+          .dg-about-name-fio {
+            @include ptSans(400);
+            font-size: 12.5px;
+            text-transform: uppercase;
+            margin-bottom: 7px;
+            text-align: left;
+            color: $silverT !important;
+            line-height: 1.5em !important;
+          }
+          .dg-about-name-prof {
+            @include ptSans(400);
+            font-size: 12.5px;
+            text-align: left;
+            color: $silverT !important;
+            line-height: 1.5em !important;
+          }
+        }
+        .dg-about-img {
+          position: static !important;
+          max-width: 90px;
+          display: block !important;
+          img {
+            object-fit: cover;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+.main-about-wrap-eight {
+  margin-top: 55px;
+  padding-bottom: 55px;
+  .main-about-eight-slider {
+    position: relative;
+    .slick-prev {
+      position: absolute;
+      bottom: -56px;
+      left: 43%;
+      z-index: 100;
+      background-color: transparent;
+      border: none;
+      transform: rotate(180deg);
+      cursor: pointer;
+      @include max-screen(1000px) {
+        left: 41%;
+      }
+      @include max-screen(800px) {
+        left: 39%;
+      }
+      @include max-screen(675px) {
+        left: 36%;
+      }
+      @include max-screen(540px) {
+        left: 34%;
+      }
+      @include max-screen(480px) {
+        display: none !important;
+      }
+    }
+    .slick-prev.flaticon-arrow-pointing-to-right:before {
+      color: $btn;
+      font-size: 17px;
+    }
+    .slick-next.flaticon-arrow-pointing-to-right:before {
+      color: $btn;
+      font-size: 17px;
+    }
+    .slick-next {
+      position: absolute;
+      bottom: -56px;
+      left: 54.5%;
+      z-index: 100;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      @include max-screen(1000px) {
+        left: 55.5%;
+      }
+      @include max-screen(800px) {
+        left: 57%;
+      }
+      @include max-screen(675px) {
+        left: 59%;
+      }
+      @include max-screen(540px) {
+        left: 61%;
+      }
+      @include max-screen(480px) {
+        display: none !important;
+      }
+    }
+    .slick-dots {
+      display: flex;
+      position: absolute;
+      bottom: -50px;
+      left: 50%;
+      z-index: 100;
+      transform: translateX(-50%);
+      li.slick-active {
+        background-color: $btn;
+      }
+      li {
+        width: 8px;
+        height: 8px;
+        border: 1px solid rgba(102, 101, 101, 1);
+        margin: 0 4px;
+        cursor: pointer;
+        button {
+          color: transparent;
+          font-size: 0;
+          border: none;
+          background-color: transparent;
+        }
+      }
+    }
+
+    .main-about-eight-slider-item {
+      width: 400px;
+      height: 130px;
+      padding-top: 40px;
+      margin-top: 10px;
+      border-top: 1px solid rgba(102, 101, 101, 0.6);
+      @include max-screen(480px) {
+        padding-left: 40px;
+        padding-right: 40px;
+      }
+      img {
+        display: block;
+        max-width: 290px;
+        width: 100%;
+        object-fit: cover;
+        height: auto;
+        margin: auto;
+        @include max-screen(480px) {
+          max-width: 250px;
+        }
+        @include max-screen(430px) {
+          max-width: 200px;
+        }
+        @include max-screen(380px) {
+          max-width: 180px;
+        }
+        @include max-screen(330px) {
+          max-width: 130px;
+        }
+      }
+      .main-about-eight-slider-item-box {
+        display: inline-block;
+        position: relative;
+        top: -48px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #ffffff;
+        border: 1px solid rgba(102, 101, 101, 0.6);
+        width: 133px;
+        height: 14px;
+        box-sizing: border-box;
+      }
+    }
+  }
+  .main-about-eight-title {
+    text-align: center;
+    font-size: 22.92px;
+    margin-bottom: 28px;
+    letter-spacing: 0.01em;
+  }
+}
+.main-about-wrap-one .main-about-one-blok-left .main-about-one-text {
+      color: #665564;
+}
+
+.main-about-wrap-two .main-about-two-title {
+color: #665564;
+}
+
+.main-about-wrap-two .main-about-two-text p {
+color: #665564;
+}
+.main-about-wrap-three .main-about-three-box {
+  color: #665564;
+}
+.main-about-wrap-four .main-about-four-title {
+    color: #665564;
+}
+
+.main-about-wrap-four .main-about-four-text p {
+  color: #665564;
+
+}
+.main-about-wrap-five .main-about-five-box .main-about-five-box-text {
+  color: #665564;
+
+}
+.main-about-wrap-six .main-about-six-title {
+  color: #665564;
+
+}
+
+.main-about-wrap-seven .main-about-seven-title {
+  color: #665564;
+
+}
+
+.dg-wrapper a.dg-about-box-link .dg-about-box .dg-about-text {
+  color: #665564!important;
+}
+.dg-wrapper a.dg-about-box-link .dg-about-box .dg-about-icon.flaticon-left-quote:before {
+  color: #665564;
+
+}
+.dg-wrapper a.dg-about-box-link .dg-about-box .dg-about-wrap .dg-about-name .dg-about-name-fio, .dg-wrapper a.dg-about-box-link .dg-about-box .dg-about-wrap .dg-about-name .dg-about-name-prof {
+  color: #665564;
+
+}
+
+.main-about-wrap-eight .main-about-eight-title {
+  color: #665564;
+font-weight: 600;
+
+}
+
+@media screen and (max-width: 1136px) {
+
+  .main-about-seven-review {
+    overflow: hidden;
+  }
+}
+
+main.main-about.about {
+  .slick-dots {
+    align-items: flex-end;
+    justify-content: center;
+    
+        li {
+          width: 8px;
+          height: 8px;
+          border: 1px solid #666565;
+          margin: 0 4px;
+          cursor: pointer;
+          border-radius: 0px;
+          background-color: white;
+          opacity: 1;
+
+        }
+  }
+}

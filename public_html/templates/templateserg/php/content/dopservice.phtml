@@ -1,0 +1,9 @@
+<main class="dop-services">
+  <div class="container">
+    <?= $this->render(false, 'library/breadcrums')  ?>
+    <?php
+        $page = $variables['page'];
+     ?>
+     <?= $page->getValue('content')  ?>
+  </div>
+</main>

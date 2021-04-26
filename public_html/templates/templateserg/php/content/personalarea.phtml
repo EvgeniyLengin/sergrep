@@ -1,0 +1,861 @@
+<?php
+$page = $variables['page'];
+ ?>
+<main class="main-akcii lc">
+        <div class="container">
+            <?= $this->render(false, 'library/breadcrums')  ?>
+
+        </div>
+
+<div class="lc-wrapper">
+  <div class="lc-cntnt">
+    <h4>Личный кабинет</h4>
+            <div class="lc-tabs">
+
+                  <div class="lc-one-tab inform active-lc">Общая информация</div>
+
+
+                <div class="lc-one-tab finans">Финансовая информация</div>
+
+
+
+                <div class="lc-one-tab payment">История платежей</div>
+
+
+
+            </div>
+  <div class="wrapper-content-lc fins">
+
+
+    <div class="content-item-lc info activ-wrapper-lc" >
+              <div class="div-menu-lc">
+                <div class="poisk">
+                    <input type="text" name="poisk" id="" placeholder="Введите код объекта">
+                      <div class="search">
+                        <span class="flaticon-search"></span>
+                      </div>
+                </div>
+                <div class="objects">
+                          <h4>ВСЕ ОБЪЕКТЫ:</h4>
+                      <div class="objects-cont">
+                          <span attr_show="1" class="one_object active-object last-item">Объект № 00001</span>
+                          <span attr_show="2" class="one_object">Объект № 00002</span>
+                          <span attr_show="3" class="one_object">Объект № 00003</span>
+
+                      </div>
+                      <div id="wwall" class="wiew-all">
+                          <span class="checkmark"></span>
+                          <span class="prld">Показать все обьекты одновременно</span>
+                      </div>
+                </div>
+              </div>
+
+              <div class="unmenu-content-obj">
+
+
+                    <div id="show_object_1" class="one-object-divs active-item-obj active_item_show last-item1">
+                          <div class="heading-objects">
+                            <h4>Информация об объекте № 00001</h4>
+                            <div>
+                                <span class="redact">Редактировать </span>
+                                <span class="addnew">+ Добавить объект</span>
+                            </div>
+                          </div>
+                          <div class="one-obj-date">
+                                  <div class="left-obj-date">
+                                        <p class="first-p"><span>Создан:</span> 20.01.2017 г. </p>
+                                        <p><span>Район:</span> 1-й Калининский </p>
+                                        <p><span>Техник:</span> Гетманов В.В. </p>
+                                  </div>
+                                  <div class="right-obj-date">
+                                        <p><span>Мастер:</span> -  </p>
+                                        <p><span>Монтажник:</span> -  </p>
+                                  </div>
+                          </div>
+                                <div class="two-obj-main-info">
+                                          <div class="left-obj-date">
+                                                <p><span>Тип сигнализации:</span> ПЦН </p>
+                                                <p><span>Название:</span> Гараж, Кучеренко А.А.</p>
+                                                <p><span>Адрес:</span> Ул. Чехова, 34</p>
+                                                <p><span>Телефоны:</span> +7 863 234-234</p>
+                                                <p><span>Директор:</span> - </p>
+                                                <p><span>Ответственный:</span> - </p>
+                                          </div>
+                                          <div class="right-obj-date">
+                                                <p><span>Пульт:</span> ООО ЧОП "СЕРЖ" </p>
+
+                                          </div>
+                                </div>
+                                <div class="three-obj-main-primech">
+                                  <h5>Примечания: </h5>
+                                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi quia magnam ab? Maxime minus aspernatur distinctio sapiente cum repudiandae fugit quisquam temporibus dolore, dolorem explicabo facilis, optio, autem quas voluptatum soluta, molestias dignissimos voluptate.</p>
+                                  <p><span>GPS:</span> 55.17272 85.384726 </p>
+                                  <p><span>Оборудование в аренде:</span> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo quam delectus, autem ratione dolorem suscipit. </p>
+                                  <p><span>Частич. откл.:</span> - </p>
+                                </div>
+                                <div class="fo-obj-main-dogovor">
+                                  <h3>ДОГОВОРА</h3>
+
+
+                                  <p><span>№ договора:</span> 010101 </p>
+                                  <p><span>Дата:</span> 18.02.2020 </p>
+                                  <p><span>Док.</span></p>
+                                  <p><span>Истекает:</span> 18.02.2020 </p>
+                                  <p><span>Юридическое лицо: </span> ООО "ЛИДЕР" </p>
+                                  <p><span>Примечание: </span> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime amet repellat ratione suscipit quia vel. </p>
+                                </div>
+
+                                <div class="heading-objects bottom">
+                                  <h4 class="spisk">Список ответственных лиц</h4>
+                                  <span class="redact">Редактировать </span>
+
+                                </div>
+                                <div class="name-otvts">
+                                <ul>
+                                      <li>
+                                        <p><span>ФИО:</span> Кучеренко Анна Анатольевна </p>
+                                        <p><span>Адрес проживания</span> Ул. Снежная, 47, 34 </p>
+                                        <p><span>Тип телефона: </span> Мобильный </p>
+                                        <p><span>Номер телефона: </span> +79045647849 </p>
+                                        <p><span>Примечание </span> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio iusto quisquam natus. </p>
+                                      </li>
+                                      <li>
+                                        <p><span>ФИО:</span> Кучеренко Сергей Павлович </p>
+                                        <p><span>Адрес проживания</span> Ул. Снежная, 47, 34 </p>
+                                        <p><span>Тип телефона: </span> Мобильный </p>
+                                        <p><span>Номер телефона: </span> +79045647849 </p>
+                                        <p><span>Примечание </span> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio iusto quisquam natus. </p>
+                                      </li>
+
+                                </ul>
+
+                                </div>
+
+
+
+                    </div>
+                    <div id="show_object_2" class="one-object-divs">
+                          <div class="heading-objects">
+                            <h4>Информация об объекте № 00002</h4>
+                              <div>
+                                <span class="redact">Редактировать </span>
+                                <span class="addnew">+ Добавить объект</span>
+                              </div>
+                          </div>
+                          <div class="one-obj-date">
+                                  <div class="left-obj-date">
+                                        <p class="first-p"><span>Создан:</span> 20.01.2017 г. </p>
+                                        <p><span>Район:</span> 1-й Калининский </p>
+                                        <p><span>Техник:</span> Гетманов В.В. </p>
+                                  </div>
+                                  <div class="right-obj-date">
+                                        <p><span>Мастер:</span> -  </p>
+                                        <p><span>Монтажник:</span> -  </p>
+                                  </div>
+                          </div>
+                                <div class="two-obj-main-info">
+                                          <div class="left-obj-date">
+                                                <p><span>Тип сигнализации:</span> ПЦН </p>
+                                                <p><span>Название:</span> Гараж, Кучеренко А.А.</p>
+                                                <p><span>Адрес:</span> Ул. Чехова, 34</p>
+                                                <p><span>Телефоны:</span> +7 863 234-234</p>
+                                                <p><span>Директор:</span> - </p>
+                                                <p><span>Ответственный:</span> - </p>
+                                          </div>
+                                          <div class="right-obj-date">
+                                                <p><span>Пульт:</span> ООО ЧОП "СЕРЖ" </p>
+
+                                          </div>
+                                </div>
+                                <div class="three-obj-main-primech">
+                                  <h5>Примечания: </h5>
+                                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi quia magnam ab? Maxime minus aspernatur distinctio sapiente cum repudiandae fugit quisquam temporibus dolore, dolorem explicabo facilis, optio, autem quas voluptatum soluta, molestias dignissimos voluptate.</p>
+                                  <p><span>GPS:</span> 55.17272 85.384726 </p>
+                                  <p><span>Оборудование в аренде:</span> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo quam delectus, autem ratione dolorem suscipit. </p>
+                                  <p><span>Частич. откл.:</span> - </p>
+                                </div>
+                                <div class="fo-obj-main-dogovor">
+                                  <h3>ДОГОВОРА</h3>
+
+
+                                  <p><span>№ договора:</span> 010101 </p>
+                                  <p><span>Дата:</span> 18.02.2020 </p>
+                                  <p><span>Док.</span></p>
+                                  <p><span>Истекает:</span> 18.02.2020 </p>
+                                  <p><span>Юридическое лицо: </span> ООО "ЛИДЕР" </p>
+                                  <p><span>Примечание: </span> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime amet repellat ratione suscipit quia vel. </p>
+                                </div>
+
+                                <div class="heading-objects bottom">
+                                  <h4 class="spisk">Список ответственных лиц</h4>
+                                  <span class="redact">Редактировать </span>
+
+                                </div>
+                                <div class="name-otvts">
+                                <ul>
+                                      <li>
+                                        <p><span>ФИО:</span> Кучеренко Анна Анатольевна </p>
+                                        <p><span>Адрес проживания</span> Ул. Снежная, 47, 34 </p>
+                                        <p><span>Тип телефона: </span> Мобильный </p>
+                                        <p><span>Номер телефона: </span> +79045647849 </p>
+                                        <p><span>Примечание </span> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio iusto quisquam natus. </p>
+                                      </li>
+                                      <li>
+                                        <p><span>ФИО:</span> Кучеренко Сергей Павлович </p>
+                                        <p><span>Адрес проживания</span> Ул. Снежная, 47, 34 </p>
+                                        <p><span>Тип телефона: </span> Мобильный </p>
+                                        <p><span>Номер телефона: </span> +79045647849 </p>
+                                        <p><span>Примечание </span> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio iusto quisquam natus. </p>
+                                      </li>
+
+                                </ul>
+
+                                </div>
+
+
+
+                    </div>
+                    <div id="show_object_3" class="one-object-divs">
+                          <div class="heading-objects">
+                            <h4>Информация об объекте № 00003</h4>
+                          <div>
+                            <span class="redact">Редактировать </span>
+                            <span class="addnew">+ Добавить объект</span>
+                          </div>
+                          </div>
+                          <div class="one-obj-date">
+                                  <div class="left-obj-date">
+                                        <p class="first-p"><span>Создан:</span> 20.01.2017 г. </p>
+                                        <p><span>Район:</span> 1-й Калининский </p>
+                                        <p><span>Техник:</span> Гетманов В.В. </p>
+                                  </div>
+                                  <div class="right-obj-date">
+                                        <p><span>Мастер:</span> -  </p>
+                                        <p><span>Монтажник:</span> -  </p>
+                                  </div>
+                          </div>
+                                <div class="two-obj-main-info">
+                                          <div class="left-obj-date">
+                                                <p><span>Тип сигнализации:</span> ПЦН </p>
+                                                <p><span>Название:</span> Гараж, Кучеренко А.А.</p>
+                                                <p><span>Адрес:</span> Ул. Чехова, 34</p>
+                                                <p><span>Телефоны:</span> +7 863 234-234</p>
+                                                <p><span>Директор:</span> - </p>
+                                                <p><span>Ответственный:</span> - </p>
+                                          </div>
+                                          <div class="right-obj-date">
+                                                <p><span>Пульт:</span> ООО ЧОП "СЕРЖ" </p>
+
+                                          </div>
+                                </div>
+                                <div class="three-obj-main-primech">
+                                  <h5>Примечания: </h5>
+                                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi quia magnam ab? Maxime minus aspernatur distinctio sapiente cum repudiandae fugit quisquam temporibus dolore, dolorem explicabo facilis, optio, autem quas voluptatum soluta, molestias dignissimos voluptate.</p>
+                                  <p><span>GPS:</span> 55.17272 85.384726 </p>
+                                  <p><span>Оборудование в аренде:</span> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo quam delectus, autem ratione dolorem suscipit. </p>
+                                  <p><span>Частич. откл.:</span> - </p>
+                                </div>
+                                <div class="fo-obj-main-dogovor">
+                                  <h3>ДОГОВОРА</h3>
+
+
+                                  <p><span>№ договора:</span> 010101 </p>
+                                  <p><span>Дата:</span> 18.02.2020 </p>
+                                  <p><span>Док.</span></p>
+                                  <p><span>Истекает:</span> 18.02.2020 </p>
+                                  <p><span>Юридическое лицо: </span> ООО "ЛИДЕР" </p>
+                                  <p><span>Примечание: </span> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime amet repellat ratione suscipit quia vel. </p>
+                                </div>
+
+                                <div class="heading-objects bottom">
+                                  <h4 class="spisk">Список ответственных лиц</h4>
+                                  <span class="redact">Редактировать </span>
+
+                                </div>
+                                <div class="name-otvts">
+                                <ul>
+                                      <li>
+                                        <p><span>ФИО:</span> Кучеренко Анна Анатольевна </p>
+                                        <p><span>Адрес проживания</span> Ул. Снежная, 47, 34 </p>
+                                        <p><span>Тип телефона: </span> Мобильный </p>
+                                        <p><span>Номер телефона: </span> +79045647849 </p>
+                                        <p><span>Примечание </span> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio iusto quisquam natus. </p>
+                                      </li>
+                                      <li>
+                                        <p><span>ФИО:</span> Кучеренко Сергей Павлович </p>
+                                        <p><span>Адрес проживания</span> Ул. Снежная, 47, 34 </p>
+                                        <p><span>Тип телефона: </span> Мобильный </p>
+                                        <p><span>Номер телефона: </span> +79045647849 </p>
+                                        <p><span>Примечание </span> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio iusto quisquam natus. </p>
+                                      </li>
+
+                                </ul>
+
+                                </div>
+
+
+
+                    </div>
+              </div>
+
+
+
+    </div>
+    <div class="content-item-lc finans">
+      <div class="wrapper-for-flex">
+            <div class="tabs-block-in-finans">
+              <span class="finans-info-tab form-zapln active-item-finans">Формы для заполнения</span>
+              <span class="finans-info-tab docs-arh">Архив документов</span>
+              <span class="finans-info-tab buh-form">Бухгалтерские формы</span>
+
+            </div>
+            <div class="swap-wrapper-finans form-zapln active-wrapper-fin-info">
+              <div class="first-doc-block">
+                <div class="doc-container">
+                    <a class="one-dock" href="assets/files/test.doc" download >
+                          <img class="logo-dock" src="assets/images/info/doc-file-format-symbol.png" alt="">
+                        <div class="name-block-for-dock">
+                          <span class="name-dock">Инструкция</span>
+                          <span class="description-dock">для ИО 102-26</span>
+                        </div>
+
+                    </a>
+                    <a class="one-dock" href="assets/files/test.doc" download >                    <img class="logo-dock" src="assets/images/info/doc-file-format-symbol.png" alt="">
+                        <div class="name-block-for-dock">
+                          <span class="name-dock">Инструкция</span>
+                          <span class="description-dock">для "Лунь-25"</span>
+                        </div>
+
+                    </a>
+                    <a class="one-dock" href="assets/files/test.doc" download >                    <img class="logo-dock" src="assets/images/info/doc-file-format-symbol.png" alt="">
+                        <div class="name-block-for-dock">
+                          <span class="name-dock">Инструкция</span>
+                          <span class="description-dock">для Астра 5</span>
+                        </div>
+
+                    </a>
+                </div>
+                <div class="doc-container">
+                    <a class="one-dock" href="assets/files/test.doc" download >
+                          <img class="logo-dock" src="assets/images/info/doc-file-format-symbol.png" alt="">
+                        <div class="name-block-for-dock">
+                          <span class="name-dock">Инструкция</span>
+                          <span class="description-dock">для Астра С</span>
+                        </div>
+
+                    </a>
+                    <a class="one-dock" href="assets/files/test.doc" download >
+                          <img class="logo-dock" src="assets/images/info/doc-file-format-symbol.png" alt="">
+                        <div class="name-block-for-dock">
+                          <span class="name-dock">Инструкция</span>
+                          <span class="description-dock">для считывателя</span>
+                        </div>
+
+                    </a>
+                    <a class="one-dock" href="assets/files/test.doc" download >
+                          <img class="logo-dock" src="assets/images/info/doc-file-format-symbol.png" alt="">
+                        <div class="name-block-for-dock">
+                          <span class="name-dock">Инструкция</span>
+                          <span class="description-dock">для ключей</span>
+                        </div>
+
+                    </a>
+                </div>
+                <div class="doc-container">
+                    <a class="one-dock" href="assets/files/test.doc" download >
+                          <img class="logo-dock" src="assets/images/info/doc-file-format-symbol.png" alt="">
+                        <div class="name-block-for-dock">
+                          <span class="name-dock">Инструкция</span>
+                          <span class="description-dock">для Астра 5121</span>
+                        </div>
+
+                    </a>
+                    <a class="one-dock" href="assets/files/test.doc" download >
+                          <img class="logo-dock" src="assets/images/info/doc-file-format-symbol.png" alt="">
+                        <div class="name-block-for-dock">
+                          <span class="name-dock">Инструкция</span>
+                          <span class="description-dock">для Астра 3321</span>
+                        </div>
+
+                    </a>
+                    <a class="one-dock" href="assets/files/test.doc" download >
+                          <img class="logo-dock" src="assets/images/info/doc-file-format-symbol.png" alt="">
+                        <div class="name-block-for-dock">
+                          <span class="name-dock">Инструкция</span>
+                          <span class="description-dock">для Астра Р</span>
+                        </div>
+
+                    </a>
+                </div>
+                <div class="doc-container">
+                    <a class="one-dock" href="assets/files/test.doc" download >
+                          <img class="logo-dock" src="assets/images/info/doc-file-format-symbol.png" alt="">
+                        <div class="name-block-for-dock">
+                          <span class="name-dock">Инструкция</span>
+                          <span class="description-dock">для Астра 5121</span>
+                        </div>
+
+                    </a>
+                    <a class="one-dock" href="assets/files/test.doc" download >
+                          <img class="logo-dock" src="assets/images/info/doc-file-format-symbol.png" alt="">
+                        <div class="name-block-for-dock">
+                          <span class="name-dock">Инструкция</span>
+                          <span class="description-dock">для Астра 3321</span>
+                        </div>
+
+                    </a>
+                    <a class="one-dock" href="assets/files/test.doc" download >
+                          <img class="logo-dock" src="assets/images/info/doc-file-format-symbol.png" alt="">
+                        <div class="name-block-for-dock">
+                          <span class="name-dock">Инструкция</span>
+                          <span class="description-dock">для Астра Р</span>
+                        </div>
+
+                    </a>
+                </div>
+              </div>
+              <div class="wrapper-button-finans">
+                    <span class="for-wiew-all-s">Загрузить больше</span>
+              </div>
+            </div>
+            <div class="swap-wrapper-finans docs-arh">
+              <div class="first-doc-block">
+                <div class="doc-container">
+                    <a class="one-dock" href="assets/files/test.doc" download >
+                          <img class="logo-dock" src="assets/images/info/doc-file-format-symbol.png" alt="">
+                        <div class="name-block-for-dock">
+                          <span class="name-dock">Инструкция</span>
+                          <span class="description-dock">для ИО 102-26</span>
+                        </div>
+
+                    </a>
+                    <a class="one-dock" href="assets/files/test.doc" download >                    <img class="logo-dock" src="assets/images/info/doc-file-format-symbol.png" alt="">
+                        <div class="name-block-for-dock">
+                          <span class="name-dock">Инструкция</span>
+                          <span class="description-dock">для "Лунь-25"</span>
+                        </div>
+
+                    </a>
+                    <a class="one-dock" href="assets/files/test.doc" download >                    <img class="logo-dock" src="assets/images/info/doc-file-format-symbol.png" alt="">
+                        <div class="name-block-for-dock">
+                          <span class="name-dock">Инструкция</span>
+                          <span class="description-dock">для Астра 5</span>
+                        </div>
+
+                    </a>
+                </div>
+                <div class="doc-container">
+                    <a class="one-dock" href="assets/files/test.doc" download >
+                          <img class="logo-dock" src="assets/images/info/doc-file-format-symbol.png" alt="">
+                        <div class="name-block-for-dock">
+                          <span class="name-dock">Инструкция</span>
+                          <span class="description-dock">для Астра С</span>
+                        </div>
+
+                    </a>
+                    <a class="one-dock" href="assets/files/test.doc" download >
+                          <img class="logo-dock" src="assets/images/info/doc-file-format-symbol.png" alt="">
+                        <div class="name-block-for-dock">
+                          <span class="name-dock">Инструкция</span>
+                          <span class="description-dock">для считывателя</span>
+                        </div>
+
+                    </a>
+                    <a class="one-dock" href="assets/files/test.doc" download >
+                          <img class="logo-dock" src="assets/images/info/doc-file-format-symbol.png" alt="">
+                        <div class="name-block-for-dock">
+                          <span class="name-dock">Инструкция</span>
+                          <span class="description-dock">для ключей</span>
+                        </div>
+
+                    </a>
+                </div>
+                <div class="doc-container">
+                    <a class="one-dock" href="assets/files/test.doc" download >
+                          <img class="logo-dock" src="assets/images/info/doc-file-format-symbol.png" alt="">
+                        <div class="name-block-for-dock">
+                          <span class="name-dock">Инструкция</span>
+                          <span class="description-dock">для Астра 5121</span>
+                        </div>
+
+                    </a>
+                    <a class="one-dock" href="assets/files/test.doc" download >
+                          <img class="logo-dock" src="assets/images/info/doc-file-format-symbol.png" alt="">
+                        <div class="name-block-for-dock">
+                          <span class="name-dock">Инструкция</span>
+                          <span class="description-dock">для Астра 3321</span>
+                        </div>
+
+                    </a>
+                    <a class="one-dock" href="assets/files/test.doc" download >
+                          <img class="logo-dock" src="assets/images/info/doc-file-format-symbol.png" alt="">
+                        <div class="name-block-for-dock">
+                          <span class="name-dock">Инструкция</span>
+                          <span class="description-dock">для Астра Р</span>
+                        </div>
+
+                    </a>
+                </div>
+                <div class="doc-container">
+                    <a class="one-dock" href="assets/files/test.doc" download >
+                          <img class="logo-dock" src="assets/images/info/doc-file-format-symbol.png" alt="">
+                        <div class="name-block-for-dock">
+                          <span class="name-dock">Инструкция</span>
+                          <span class="description-dock">для Астра 5121</span>
+                        </div>
+
+                    </a>
+                    <a class="one-dock" href="assets/files/test.doc" download >
+                          <img class="logo-dock" src="assets/images/info/doc-file-format-symbol.png" alt="">
+                        <div class="name-block-for-dock">
+                          <span class="name-dock">Инструкция</span>
+                          <span class="description-dock">для Астра 3321</span>
+                        </div>
+
+                    </a>
+                    <a class="one-dock" href="assets/files/test.doc" download >
+                          <img class="logo-dock" src="assets/images/info/doc-file-format-symbol.png" alt="">
+                        <div class="name-block-for-dock">
+                          <span class="name-dock">Инструкция</span>
+                          <span class="description-dock">для Астра Р</span>
+                        </div>
+
+                    </a>
+                </div>
+              </div>
+              <div class="wrapper-button-finans">
+                    <span class="for-wiew-all-s">Загрузить больше</span>
+              </div>
+            </div>
+            <div class="swap-wrapper-finans buh-form">
+              <div class="first-doc-block">
+                <div class="doc-container">
+                    <a class="one-dock" href="assets/files/test.doc" download >
+                          <img class="logo-dock" src="assets/images/info/doc-file-format-symbol.png" alt="">
+                        <div class="name-block-for-dock">
+                          <span class="name-dock">Инструкция</span>
+                          <span class="description-dock">для ИО 102-26</span>
+                        </div>
+
+                    </a>
+                    <a class="one-dock" href="assets/files/test.doc" download >                    <img class="logo-dock" src="assets/images/info/doc-file-format-symbol.png" alt="">
+                        <div class="name-block-for-dock">
+                          <span class="name-dock">Инструкция</span>
+                          <span class="description-dock">для "Лунь-25"</span>
+                        </div>
+
+                    </a>
+                    <a class="one-dock" href="assets/files/test.doc" download >                    <img class="logo-dock" src="assets/images/info/doc-file-format-symbol.png" alt="">
+                        <div class="name-block-for-dock">
+                          <span class="name-dock">Инструкция</span>
+                          <span class="description-dock">для Астра 5</span>
+                        </div>
+
+                    </a>
+                </div>
+                <div class="doc-container">
+                    <a class="one-dock" href="assets/files/test.doc" download >
+                          <img class="logo-dock" src="assets/images/info/doc-file-format-symbol.png" alt="">
+                        <div class="name-block-for-dock">
+                          <span class="name-dock">Инструкция</span>
+                          <span class="description-dock">для Астра С</span>
+                        </div>
+
+                    </a>
+                    <a class="one-dock" href="assets/files/test.doc" download >
+                          <img class="logo-dock" src="assets/images/info/doc-file-format-symbol.png" alt="">
+                        <div class="name-block-for-dock">
+                          <span class="name-dock">Инструкция</span>
+                          <span class="description-dock">для считывателя</span>
+                        </div>
+
+                    </a>
+                    <a class="one-dock" href="assets/files/test.doc" download >
+                          <img class="logo-dock" src="assets/images/info/doc-file-format-symbol.png" alt="">
+                        <div class="name-block-for-dock">
+                          <span class="name-dock">Инструкция</span>
+                          <span class="description-dock">для ключей</span>
+                        </div>
+
+                    </a>
+                </div>
+                <div class="doc-container">
+                    <a class="one-dock" href="assets/files/test.doc" download >
+                          <img class="logo-dock" src="assets/images/info/doc-file-format-symbol.png" alt="">
+                        <div class="name-block-for-dock">
+                          <span class="name-dock">Инструкция</span>
+                          <span class="description-dock">для Астра 5121</span>
+                        </div>
+
+                    </a>
+                    <a class="one-dock" href="assets/files/test.doc" download >
+                          <img class="logo-dock" src="assets/images/info/doc-file-format-symbol.png" alt="">
+                        <div class="name-block-for-dock">
+                          <span class="name-dock">Инструкция</span>
+                          <span class="description-dock">для Астра 3321</span>
+                        </div>
+
+                    </a>
+                    <a class="one-dock" href="assets/files/test.doc" download >
+                          <img class="logo-dock" src="assets/images/info/doc-file-format-symbol.png" alt="">
+                        <div class="name-block-for-dock">
+                          <span class="name-dock">Инструкция</span>
+                          <span class="description-dock">для Астра Р</span>
+                        </div>
+
+                    </a>
+                </div>
+                <div class="doc-container">
+                    <a class="one-dock" href="assets/files/test.doc" download >
+                          <img class="logo-dock" src="assets/images/info/doc-file-format-symbol.png" alt="">
+                        <div class="name-block-for-dock">
+                          <span class="name-dock">Инструкция</span>
+                          <span class="description-dock">для Астра 5121</span>
+                        </div>
+
+                    </a>
+                    <a class="one-dock" href="assets/files/test.doc" download >
+                          <img class="logo-dock" src="assets/images/info/doc-file-format-symbol.png" alt="">
+                        <div class="name-block-for-dock">
+                          <span class="name-dock">Инструкция</span>
+                          <span class="description-dock">для Астра 3321</span>
+                        </div>
+
+                    </a>
+                    <a class="one-dock" href="assets/files/test.doc" download >
+                          <img class="logo-dock" src="assets/images/info/doc-file-format-symbol.png" alt="">
+                        <div class="name-block-for-dock">
+                          <span class="name-dock">Инструкция</span>
+                          <span class="description-dock">для Астра Р</span>
+                        </div>
+
+                    </a>
+                </div>
+              </div>
+              <div class="wrapper-button-finans">
+                    <span class="for-wiew-all-s">Загрузить больше</span>
+              </div>
+            </div>
+
+    </div>
+  </div>
+    <div class="content-item-lc payment">
+        <div class="wrapper-payment-div">
+              <div class="content-block-in-payment">
+                  <div class="divs-control">
+                      <span class="tab-control ohr active-control">Охранные услуги</span>
+                      <span class="tab-control teh">Монтаж, техническое обслуживание и ремонт</span>
+                  </div>
+                  <div class="history_and_search">
+                      <div class="fix-history">
+                        <h4>История платежей</h4>
+                        <div class="download-but"></div>
+                      </div>
+
+                    <div class="search-div">
+                      <input type="text" name="" value="" placeholder="Введите номер платежа/период оплаты">
+                      <div class="search-lup"></div>
+                    </div>
+                  </div>
+
+                  <div class="uslugi-payment ohrana activ-control-payment" >
+                            <div class="report-payment-one">
+                                <div class="heading-report">
+                                    <span class="date-report">18 июля 2019 г.</span>
+                                    <span class="number-report">№ 123</span>
+                                </div>
+                                <div class="paymen-report-element">
+                                    <div class="left-element-payment">
+                                        <div class="price-and-name">
+                                            <span class="price-element">1 900 ₽</span>
+                                            <span class="name-usl-element">Абон. плата (охр. сигнализация)</span>
+                                        </div>
+                                    </div>
+                                    <div class="right-element-payment">
+                                          <div class="status-payment">
+                                            <span class="payment-status-on">Оплачено</span>
+                                            <span class="payment-result-off">Оплатить</span>
+                                          </div>
+
+                                    </div>
+                                </div>
+                                <div class="paymen-report-element">
+                                    <div class="left-element-payment">
+                                        <div class="price-and-name">
+                                            <span class="price-element">1 900 ₽</span>
+                                            <span class="name-usl-element">Абон. плата (охр. сигнализация)</span>
+                                        </div>
+                                    </div>
+                                    <div class="right-element-payment">
+                                          <div class="status-payment">
+                                            <span class="payment-status-on">Не оплачено</span>
+                                            <span class="payment-result-on">Оплатить</span>
+                                          </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="report-payment-one">
+                                <div class="heading-report">
+                                    <span class="date-report">18 июля 2019 г.</span>
+                                    <span class="number-report">№ 123</span>
+                                </div>
+                                <div class="paymen-report-element">
+                                    <div class="left-element-payment">
+                                        <div class="price-and-name">
+                                            <span class="price-element">1 900 ₽</span>
+                                            <span class="name-usl-element">Абон. плата (охр. сигнализация)</span>
+                                        </div>
+                                    </div>
+                                    <div class="right-element-payment">
+                                          <div class="status-payment">
+                                            <span class="payment-status-on">Оплачено</span>
+                                            <span class="payment-result-off">Оплатить</span>
+                                          </div>
+
+                                    </div>
+                                </div>
+                                <div class="paymen-report-element">
+                                    <div class="left-element-payment">
+                                        <div class="price-and-name">
+                                            <span class="price-element">1 900 ₽</span>
+                                            <span class="name-usl-element">Абон. плата (охр. сигнализация)</span>
+                                        </div>
+                                    </div>
+                                    <div class="right-element-payment">
+                                          <div class="status-payment">
+                                            <span class="payment-status-on">Не оплачено</span>
+                                            <span class="payment-result-on">Оплатить</span>
+                                          </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="report-payment-one">
+                                <div class="heading-report">
+                                    <span class="date-report">18 июля 2019 г.</span>
+                                    <span class="number-report">№ 123</span>
+                                </div>
+                                <div class="paymen-report-element">
+                                    <div class="left-element-payment">
+                                        <div class="price-and-name">
+                                            <span class="price-element">1 900 ₽</span>
+                                            <span class="name-usl-element">Абон. плата (охр. сигнализация)</span>
+                                        </div>
+                                    </div>
+                                    <div class="right-element-payment">
+                                          <div class="status-payment">
+                                            <span class="payment-status-on">Оплачено</span>
+                                            <span class="payment-result-off">Оплатить</span>
+                                          </div>
+
+                                    </div>
+                                </div>
+                                <div class="paymen-report-element">
+                                    <div class="left-element-payment">
+                                        <div class="price-and-name">
+                                            <span class="price-element">1 900 ₽</span>
+                                            <span class="name-usl-element">Абон. плата (охр. сигнализация)</span>
+                                        </div>
+                                    </div>
+                                    <div class="right-element-payment">
+                                          <div class="status-payment">
+                                            <span class="payment-status-on">Не оплачено</span>
+                                            <span class="payment-result-on">Оплатить</span>
+                                          </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="report-payment-one">
+                                <div class="heading-report">
+                                    <span class="date-report">18 июля 2019 г.</span>
+                                    <span class="number-report">№ 123</span>
+                                </div>
+                                <div class="paymen-report-element">
+                                    <div class="left-element-payment">
+                                        <div class="price-and-name">
+                                            <span class="price-element">1 900 ₽</span>
+                                            <span class="name-usl-element">Абон. плата (охр. сигнализация)</span>
+                                        </div>
+                                    </div>
+                                    <div class="right-element-payment">
+                                          <div class="status-payment">
+                                            <span class="payment-status-on">Оплачено</span>
+                                            <span class="payment-result-off">Оплатить</span>
+                                          </div>
+
+                                    </div>
+                                </div>
+                                <div class="paymen-report-element">
+                                    <div class="left-element-payment">
+                                        <div class="price-and-name">
+                                            <span class="price-element">1 900 ₽</span>
+                                            <span class="name-usl-element">Абон. плата (охр. сигнализация)</span>
+                                        </div>
+                                    </div>
+                                    <div class="right-element-payment">
+                                          <div class="status-payment">
+                                            <span class="payment-status-on">Не оплачено</span>
+                                            <span class="payment-result-on">Оплатить</span>
+                                          </div>
+
+                                    </div>
+                                </div>
+                                <div class="paymen-report-element">
+                                    <div class="left-element-payment">
+                                        <div class="price-and-name">
+                                            <span class="price-element">1 900 ₽</span>
+                                            <span class="name-usl-element">Абон. плата (охр. сигнализация)</span>
+                                        </div>
+                                    </div>
+                                    <div class="right-element-payment">
+                                          <div class="status-payment">
+                                            <span class="payment-status-on">Оплачено</span>
+                                            <span class="payment-result-off">Оплатить</span>
+                                          </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="for-button-reports">
+                              <span class="wiew-all-button">
+                              Загрузить больше
+                              </span>
+                            </div>
+                  </div>
+                  <div class="uslugi-payment teh-obs" ></div>
+              </div>
+              <div class="price-block-in-payment">
+                  <div class="zad-div-gold">
+                    <h4>Задолженность</h4>
+                    <span class="text-date">на 20 октября 2019 г.</span>
+                    <span class="gold">1700 ₽</span>
+                  </div>
+                  <div class="fix-button-oplat">
+                  <span class="button-oplat">Оплатить</span>
+                  </div>
+              </div>
+        </div>
+    </div>
+
+  </div>
+
+  </div>
+
+</div>
+<div class="main-info-btn-wrap">
+  <p class="main-info-btn-text">
+    Не нашли, что искали? Cвяжитесь с нами, чтобы задать вопрос:
+  </p>
+  <button type="button" class="main-btn">
+    Связаться
+  </button>
+</div>
+
+
+</main>

@@ -1,0 +1,69 @@
+<?php
+/**
+ * Страница контента.
+ * Страница по умолчанию обрабатывается по отдельному шаблону `content/home/index`.
+ *
+ * @var umiTemplaterPHP|ViewPhpExtension|DemomarketPhpExtension $this
+ * @var array $variables
+ * @var iUmiHierarchyElement $page
+ */
+
+$page = $variables['page'];
+
+
+?>
+
+
+
+<?php if ($this->isHomePage($variables)): ?>
+	<?= $this->render($variables, 'content/home/index') ?>
+<?php elseif ($this->is404Page($variables)): ?>
+	<?= $this->render($variables, 'content/notfound') ?>
+<?php elseif ( ($page->getObjectTypeId()) == 195 ): ?>
+	<?= $this->render($variables, 'content/about') ?>
+<?php elseif ( ($page->getObjectTypeId()) == 199 ): ?>
+	<?= $this->render($variables, 'content/akcii') ?>
+<?php elseif ( ($page->getObjectTypeId()) == 202 ): ?>
+	<?= $this->render($variables, 'content/contacts') ?>
+<?php elseif ( ($page->getObjectTypeId()) == 203 ): ?>
+	<?= $this->render($variables, 'content/dopservice') ?>
+<?php elseif ( ($page->getObjectTypeId()) == 204 ): ?>
+	<?= $this->render($variables, 'content/sos') ?>
+<?php elseif ( ($page->getObjectTypeId()) == 206 ): ?>
+	<?= $this->render($variables, 'content/montaj') ?>
+<?php elseif ( ($page->getObjectTypeId()) == 209 ): ?>
+	<?= $this->render($variables, 'content/help') ?>
+<?php elseif ( ($page->getObjectTypeId()) == 215 ): ?>
+	<?= $this->render($variables, 'content/cargoprotect') ?>
+<?php elseif ( ($page->getObjectTypeId()) == 221 ): ?>
+	<?= $this->render($variables, 'content/car-protect') ?>
+<?php elseif ( ($page->getObjectTypeId()) == 228 ): ?>
+	<?= $this->render($variables, 'content/partnerchop') ?>
+<?php elseif ( ($page->getObjectTypeId()) == 223 ): ?>
+	<?= $this->render($variables, 'content/registration') ?>
+<?php elseif ( ($page->getObjectTypeId()) == 225 ): ?>
+	<?= $this->render($variables, 'content/auth') ?>
+<?php elseif ( ($page->getObjectTypeId()) == 231 ): ?>
+	<?= $this->render($variables, 'content/personalarea') ?>
+<?php else: ?>
+	<div class="section_capt">
+		<div class="container">
+			<div class="row">
+				<h1 umi:element-id="<?= $page->getId() ?>"
+				    umi:field-name="h1"
+				    umi:empty="<?= $this->translate('empty_page_name') ?>"
+				>
+					<?= $this->escape($page->getValue('h1')) ?>
+				</h1>
+			</div>
+		</div>
+	</div>
+
+	<div class="container grey_border"
+	     umi:element-id="<?= $page->getId() ?>"
+	     umi:field-name="content"
+	     umi:empty="<?= $this->translate('empty_page_content') ?>"
+	>
+		<?= $page->getValue('content') ?>
+	</div>
+<?php endif; ?>

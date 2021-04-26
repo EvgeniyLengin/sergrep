@@ -1,0 +1,62 @@
+<?php $page = $variables['page']; ?>
+<div class="wrapper-chop-page">
+  <div class="container">
+    <?= $this->render(false, 'library/breadcrums')  ?>
+  </div>
+  <div class="wrapper-content-div-chop">
+        <div class="content-div-chop">
+          <h1><?= $page->getValue('h1'); ?></h1>
+          <div class="text-chop">
+            <?= $page->getValue('tekst_pod_zagolovkom_chop'); ?>
+          </div>
+          <div class="price-and-button-chop">
+              <div class="price-div-chop">
+                <span class="price-head">Стоимость</span>
+                <div class="fk-price">
+                  от <span><?= $page->getValue('cena_chop'); ?></span> руб.
+
+                </div>
+              </div>
+              <div class="button-div-chop">
+                  <button class="modal-chop" type="button" name="button">Оставить заявку</button>
+              </div>
+          </div>
+        </div>
+        <div class="wideo-wrapper-chop">
+          <iframe width="100%" height="309px" src="https://www.youtube.com/embed/<?= $page->getValue('kod_video');?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+  </div>
+
+
+  <div class="wrapper-for-slider-chop">
+
+
+  <div id="our-partners" class="main-about-wrap-eight">
+    <h3 class="main-about-eight-title">
+      Уже используют:
+    </h3>
+
+
+
+    <div class="main-about-eight-slider">
+      <?php
+      $partn = $page->getValue('slajder_s_partnerami_chop');
+
+      foreach ($partn as $key => $value) {
+            $kart = $value->getFilePath(true); ?>
+            <div class="main-about-eight-slider-item">
+              <span class="main-about-eight-slider-item-box"></span>
+              <img src="<?= $kart ?>" alt="">
+            </div>
+
+    <?php
+    }
+     ?>
+    </div>
+  </div>
+
+  </div>
+
+
+
+</div>

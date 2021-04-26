@@ -1,0 +1,215 @@
+<?php
+$page = $variables['page'];
+ ?>
+<main class="main-about about">
+  <div class="container">
+    	<?= $this->render(false, 'library/breadcrums')  ?>
+    <div class="main-about-wrap-one">
+      <div class="main-about-one-blok-left">
+        <h2 class="main-about-one-title">
+    <?= $page->getValue('zagolovok_stranicy') ;?>
+        </h2>
+        <span class="main-about-one-text">
+              <?= $page->getValue('tekst_sleva_pod_zagolovkom') ;?>
+        </span>
+
+      </div>
+      <div class="main-about-one-blok-right">
+        <a href="#video-about-us" class="main-about-one-blok-right-link1 main-about-one-blok-right-link">
+          <span class="main-about-one-blok-right-link-icon flaticon-play-button-1"></span>
+          <span class="main-about-one-blok-right-link-text">
+            видео о нас
+          </span>
+        </a>
+        <a href="#сustomer-reviews" class="main-about-one-blok-right-link2 main-about-one-blok-right-link">
+          <span class="main-about-one-blok-right-link-icon flaticon-testimonial"></span>
+          <span class="main-about-one-blok-right-link-text">
+            Отзывы клиентов
+          </span>
+        </a>
+        <a href="#our-partners" class="main-about-one-blok-right-link3 main-about-one-blok-right-link">
+          <span class="main-about-one-blok-right-link-icon flaticon-high-five"></span>
+          <span class="main-about-one-blok-right-link-text">
+            наши Партнеры
+          </span>
+        </a>
+      </div>
+    </div>
+    <div class="main-about-wrap-two">
+      <h3 class="main-about-two-title">
+        <?= $page->getValue('centralnyj_zagolovok') ;?>
+      </h3>
+      <span class="main-about-two-text">
+        <?= $page->getValue('chem_zanimaemsya_tekst') ;?>
+      </span>
+    </div>
+    <div class="main-about-wrap-three">
+      <a href="#" class="main-about-three-box">
+        <span class="main-about-three-icon flaticon-briefcase"></span>
+        <span class="main-about-three-text">
+          Охрана бизнеса
+        </span>
+      </a>
+      <a href="#" class="main-about-three-box">
+        <span class="main-about-three-icon flaticon-apartment"></span>
+        <span class="main-about-three-text">
+          Охрана жилья
+        </span>
+      </a>
+      <a href="#" class="main-about-three-box">
+        <span class="main-about-three-icon flaticon-steering-wheel"></span>
+        <span class="main-about-three-text">
+          Охрана авто
+        </span>
+      </a>
+      <a href="#" class="main-about-three-box">
+        <span class="main-about-three-icon flaticon-sos"></span>
+        <span class="main-about-three-text">
+          Кнопка SOS
+        </span>
+      </a>
+      <a href="#" class="main-about-three-box">
+        <span class="main-about-three-icon flaticon-project"></span>
+        <span class="main-about-three-text">
+          Проекты систем
+        </span>
+      </a>
+      <a href="#" class="main-about-three-box">
+        <span class="main-about-three-icon flaticon-engineer"></span>
+        <span class="main-about-three-text">
+          Монтаж
+        </span>
+      </a>
+    </div>
+    <div class="main-about-wrap-four">
+      <h3 class="main-about-four-title">
+    <?= $page->getValue('vtoroj_centralnyj_zagolovok') ;?>
+      </h3>
+      <span class="main-about-four-text">
+          <?= $page->getValue('tekst_posle_vtorogo_zagolovka') ;?>
+
+      </span>
+    </div>
+
+
+    <div class="main-about-wrap-five">
+      <?php
+      $preim = $page->getValue('etapy_raboty');
+      foreach ($preim as $key => $value) {
+        $ibpa = $this->getObjectById($value); ?>
+        <div class="main-about-five-box">
+          <p class="main-about-five-box-number">
+            <?= $ibpa->getValue('nomer') ?>
+          </p>
+          <p class="main-about-five-box-title">
+            <?= $ibpa->getValue('zagolovok_poryadka') ?>
+          </p>
+          <p class="main-about-five-box-text">
+          <?= $ibpa->getValue('tekst_nizhe_zagolovka') ?>
+          </p>
+        </div>
+
+
+      <?php
+      }
+     ?>
+    </div>
+    <div id="video-about-us" class="main-about-wrap-six">
+      <h3 class="main-about-six-title">
+        Видео о нашей компании
+      </h3>
+      <div class="main-about-six-video">
+        <iframe width="100%" height="300" src="https://www.youtube-nocookie.com/embed/<?= $page->getValue('ssylka_na_video_yutub_tolko_kod_posle') ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+    <div id="сustomer-reviews" class="main-about-wrap-seven">
+      <h3 class="main-about-seven-title">
+        Отзывы клиентов
+      </h3>
+
+      <div class="main-about-seven-review">
+        <div id="dg-container" class="dg-container">
+  				<div class="dg-wrapper">
+
+              <?php
+            $slideOtz = $page->getValue('slajder_s_otzyvami');
+
+
+              foreach ($slideOtz as $key => $value) {
+                $oneslideotz = $this->getObjectById($value);
+                ?>
+
+                <a href="<?=  $oneslideotz->getValue('ssylka_kuda_vedet_slajd_pri_klike'); ?>" class="dg-about-box-link" target="_blank" >
+                  <div class="dg-about-box">
+                    <span class="dg-about-icon flaticon-left-quote"></span>
+                    <span class="dg-about-text">
+                      <?php $mm = $oneslideotz->getValue('osnovnoj_tekst');
+                        $mm = explode("\n", $mm);
+                        $last_tmp = count($mm)-1;
+                        $mm[$last_tmp] = str_replace('</p>', '<span class="dg-about-icon1 flaticon-right-quote-sign"></span> </p>', $mm[$last_tmp] );
+                      $mm = implode("\n", $mm);
+                      echo $mm;
+                         ?>
+
+                    </span>
+                    <div class="dg-about-wrap">
+                      <div class="dg-about-name">
+                        <p class="dg-about-name-fio">
+                          <?= $oneslideotz->getValue('imya') ?>
+                        </p>
+                        <p class="dg-about-name-prof">
+                          <?= $oneslideotz->getValue('dolzhnost') ?>
+                        </p>
+                      </div>
+                      <div class="dg-about-img">
+                        <img src="<?= $oneslideotz->getValue('foto') ?>" alt="">
+                      </div>
+                    </div>
+                  </div>
+                </a>
+
+
+                 <?php
+                }
+
+              ?>
+
+
+  				</div>
+  				<nav class="about-arrow">
+  					<span class="dg-prev flaticon-arrow-pointing-to-right"></span>
+  					<span class="dg-next flaticon-arrow-pointing-to-right"></span>
+  				</nav>
+  			</div>
+      </div>
+      <div class="main-about-seven-btn">
+        <button type="button" name="button" id="review-btn" class="main-btn about-btn">
+          оставить отзыв
+        </button>
+      </div>
+    </div>
+    <div id="our-partners" class="main-about-wrap-eight">
+      <h3 class="main-about-eight-title">
+        Наши партнеры
+      </h3>
+
+
+
+      <div class="main-about-eight-slider">
+        <?php
+        $partn = $page->getValue('slajder_s_partnerami');
+
+        foreach ($partn as $key => $value) {
+              $kart = $value->getFilePath(true); ?>
+              <div class="main-about-eight-slider-item">
+                <span class="main-about-eight-slider-item-box"></span>
+                <img src="<?= $kart ?>" alt="">
+              </div>
+
+      <?php
+      }
+       ?>
+      </div>
+    </div>
+  </div>
+</main>

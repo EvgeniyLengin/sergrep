@@ -1,0 +1,23 @@
+<?php
+/**
+ * Системная страница результата восстановления пароля по ссылке из письма.
+ *
+ * @var umiTemplaterPHP|ViewPhpExtension|DemomarketPhpExtension $this
+ * @var array $variables
+ */
+?>
+
+<div class="section_capt">
+	<div class="container fogpash1div">
+		<div class="row">
+			<h1 class="fogpash1"><?= $this->escape($variables['header']) ?></h1>
+		</div>
+	</div>
+</div>
+
+<div class="container grey_border forget-password">
+	<div class="fix-error-div">
+			<p><?= $this->getPasswordRestoreMessage($variables) ?></p>
+	</div>
+	<a class="button_ho_home" href="/">Вернуться на главную</a>
+</div>

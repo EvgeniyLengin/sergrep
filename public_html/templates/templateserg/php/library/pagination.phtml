@@ -1,0 +1,84 @@
+<?php
+/**
+ * Пагинация.
+ *
+ * @var umiTemplaterPHP|ViewPhpExtension|DemomarketPhpExtension $this
+ * @var array $variables
+ */
+
+
+if (!$this->canShowPagination($variables)) {
+	return;
+}
+
+$pagination = $this->macros('system', 'numpages', [$variables['total'], $variables['per_page'], null, null, 3]);
+
+
+?>
+
+
+<div class="news-page__pagination">
+
+	<div class="pagination-number">
+
+
+							<?php
+$maxstr = $pagination['toend_link']['page-num'];
+$tekstr = $pagination['current-page'];
+
+							if ( $tekstr < $maxstr ) {
+
+
+
+							$pagespagin = $pagination['pages'];
+							 foreach ($pagespagin as $key => $value) {
+
+								if ($maxstr == ($value['num']-1) ) continue;
+																			 if ( isset($value['is-active'])) { ?>
+
+																				 	<a href="/osnovnaya-lenta/<?= $value['link'] ?>" class="pagination-number-link pagination-number-link-curent"><?= $value['num'] ?></a>
+
+																			<? }  else { ?>
+
+																				 	<a href="/osnovnaya-lenta/<?= $value['link'] ?>" class="pagination-number-link"><?= $value['num'] ?></a>
+																			<? }
+
+																														}
+
+							?>
+							<a href="#" class="pagination-number-link no-color">...</a>
+							<a href="/osnovnaya-lenta/<?= $pagination['toend_link']['value'] ?>" class="pagination-number-link"><?=$pagination['toend_link']['page-num']+1; ?></a>
+<?php
+} else { ?>
+
+	<a href="/osnovnaya-lenta/<?= $pagination['toend_link']['value'] ?>" class="pagination-number-link"><?=$pagination['toend_link']['page-num']+1; ?></a>
+	<a href="#" class="pagination-number-link no-color">...</a>
+
+
+<?php
+$pagespagin = $pagination['pages'];
+ foreach ($pagespagin as $key => $value) {
+
+	 if ( isset($value['is-active'])) { ?>
+
+			<a href="/osnovnaya-lenta/<?= $value['link'] ?>" class="pagination-number-link pagination-number-link-curent"><?= $value['num'] ?></a>
+
+	<? }  else { ?>
+
+			<a href="/osnovnaya-lenta/<?= $value['link'] ?>" class="pagination-number-link"><?= $value['num'] ?></a>
+	<? }
+}
+
+ } ?>
+
+
+
+
+
+	</div>
+
+	<div class="pagination-arrow">
+		<a href="/osnovnaya-lenta/<?= $pagination['toprev_link']['value'] ?>" class="pagination-arrow-link1 flaticon-arrow-pointing-to-right"></a>
+		<a href="/osnovnaya-lenta/<?= $pagination['tonext_link']['value'] ?>" class="pagination-arrow-link2 flaticon-arrow-pointing-to-right"></a>
+	</div>
+</div>

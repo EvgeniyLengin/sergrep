@@ -1,0 +1,88 @@
+    /*
+    Flaticon icon font: Flaticon
+    Creation date: 11/10/2019 12:11
+    */
+
+    @font-face {
+  font-family: "Flaticon";
+  src: url("./Flaticon.eot");
+  src: url("./Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("./Flaticon.woff2") format("woff2"),
+       url("./Flaticon.woff") format("woff"),
+       url("./Flaticon.ttf") format("truetype"),
+       url("./Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("./Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+    .fi:before{
+        display: inline-block;
+  font-family: "Flaticon";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+    }
+
+    .flaticon-high-five:before { content: "\f100"; }
+.flaticon-testimonial:before { content: "\f101"; }
+.flaticon-briefcase:before { content: "\f102"; }
+.flaticon-apartment:before { content: "\f103"; }
+.flaticon-sos:before { content: "\f104"; }
+.flaticon-steering-wheel:before { content: "\f105"; }
+.flaticon-project:before { content: "\f106"; }
+.flaticon-engineer:before { content: "\f107"; }
+.flaticon-smartphone:before { content: "\f108"; }
+.flaticon-call-center:before { content: "\f109"; }
+.flaticon-podcast:before { content: "\f10a"; }
+.flaticon-login:before { content: "\f10b"; }
+.flaticon-bell:before { content: "\f10c"; }
+.flaticon-medical-history:before { content: "\f10d"; }
+.flaticon-bar-chart:before { content: "\f10e"; }
+.flaticon-globe:before { content: "\f10f"; }
+.flaticon-notification:before { content: "\f110"; }
+.flaticon-camera:before { content: "\f111"; }
+.flaticon-call-center-1:before { content: "\f112"; }
+.flaticon-problem:before { content: "\f113"; }
+.flaticon-inbox:before { content: "\f114"; }
+.flaticon-credit-card:before { content: "\f115"; }
+.flaticon-open-book:before { content: "\f116"; }
+.flaticon-healthcare-and-medical:before { content: "\f117"; }
+    
+    $font-Flaticon-high-five: "\f100";
+    $font-Flaticon-testimonial: "\f101";
+    $font-Flaticon-briefcase: "\f102";
+    $font-Flaticon-apartment: "\f103";
+    $font-Flaticon-sos: "\f104";
+    $font-Flaticon-steering-wheel: "\f105";
+    $font-Flaticon-project: "\f106";
+    $font-Flaticon-engineer: "\f107";
+    $font-Flaticon-smartphone: "\f108";
+    $font-Flaticon-call-center: "\f109";
+    $font-Flaticon-podcast: "\f10a";
+    $font-Flaticon-login: "\f10b";
+    $font-Flaticon-bell: "\f10c";
+    $font-Flaticon-medical-history: "\f10d";
+    $font-Flaticon-bar-chart: "\f10e";
+    $font-Flaticon-globe: "\f10f";
+    $font-Flaticon-notification: "\f110";
+    $font-Flaticon-camera: "\f111";
+    $font-Flaticon-call-center-1: "\f112";
+    $font-Flaticon-problem: "\f113";
+    $font-Flaticon-inbox: "\f114";
+    $font-Flaticon-credit-card: "\f115";
+    $font-Flaticon-open-book: "\f116";
+    $font-Flaticon-healthcare-and-medical: "\f117";

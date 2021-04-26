@@ -1,0 +1,11 @@
+<?php
+$headerRedMenu = ($this->macros('menu', 'draw', array('headerredmenu')))['item'];
+    foreach ($headerRedMenu as $key => $value) {
+      $onepunkt = $value;
+      ?>
+        <div class="menu-item">
+            <a href="<?= $value['link']; ?>"><?= $value['name']; ?></a>
+        </div>
+        <?php
+        }
+        ?>

@@ -1,0 +1,16 @@
+<div class="breadcrumbs">
+  <?php  $navi = $this->macros('core', 'navibar');
+  $navi = $navi['items'];
+  ?>
+    <a href="/"><span class="breadcrumbs_item">Главная</span></a>
+
+  <?php
+  foreach ($navi as $key => $value) { ?>
+
+    <span class="phone_text_tere">|</span>
+    <a href="<?= $value['link']; ?>"><span class="breadcrumbs_item"><?= $value['text']; ?></span></a>
+  <?php
+  }
+
+  ?>
+</div>

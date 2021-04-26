@@ -1,0 +1,221 @@
+<?php
+$page = $variables['page'];
+?>
+
+<main class="main-sos">
+  <div class="container">
+
+        <?= $this->render(false, 'library/breadcrums')  ?>
+
+    <div class="sos-mobil-block-wrap">
+      <div class="sos-mobil-block1">
+        <h2 class="sos-mobil-block1-title">
+          <?= $page->getValue('zagolovok_stranicy')  ?>
+        </h2>
+        <span class="sos-mobil-block1-text">
+            <?= $page->getValue('tekst_pod_zagolovkom')  ?>
+        </span>
+
+
+      </div>
+      <div class="sos-mobil-block2">
+        <img src="<?= $page->getValue('kart14') ?>" alt="" class="">
+      </div>
+      <div class="sos-mobil-block3">
+        <p class="sos-mobil-block3-text">
+            <?= $page->getValue('chtopoluch')  ?>
+        </p>
+
+        <?php
+      $sprav = $page->getValue('preimuwestva_spr');
+
+      foreach ($sprav as $key => $value) {
+        $onep = $this->getObjectById($value);
+        ?>
+
+        <div class="sos-mobil-block3-box">
+          <span class="sos-mobil-block3-box-icon"></span>
+          <span class="sos-mobil-block3-box-text">
+            <?=   $onep->getValue('tekst');   ?>
+          </span>
+        </div>
+
+<?php
+      }
+
+         ?>
+
+
+        <div class="sos-mobil-block3-box sos-mobil-block3-box1">
+        <a href="<?= $page->getValue('ssylka_epl_stor') ?>" target="_blank" >
+              <img src="assets/images/home/app-store.png" alt="" class="sos-mobil-block3-box1-img">
+         </a>
+         <a href="<?= $page->getValue('ssylka_gugl_plej') ?>" target="_blank" >
+              <img src="assets/images/home/google-play.png" alt="" class="sos-mobil-block3-box1-img1">
+         </a>
+
+        </div>
+      </div>
+    </div>
+    <div class="sos-mobil-block-wrap1">
+      <h2 class="sos-mobil-block1-title">
+      <?=  $page->getValue('vtoroj_blok_centralnyj_zagolovok') ?>
+      </h2>
+      <span class="sos-mobil-block-wrap1-text">
+      <?= $page->getValue('tekst_pod_centralnym_zagolovkom') ?>
+      </span>
+    </div>
+    <div class="sos-mobil-block-wrap2">
+      <div class="sos-mobil-block-left">
+        <div class="sos-mobil-block-left-box">
+          <div class="sos-mobil-block-left-box-icon">
+            <span class="flaticon-login"></span>
+          </div>
+          <div class="sos-mobil-block-left-box-text">
+            <p class="sos-mobil-block-left-box-text-title">
+    <?= $page->getValue('1_zagolovok') ?>
+            </p>
+            <p class="sos-mobil-block-left-box-text-text">
+      <?= $page->getValue('1_tekst') ?>
+            </p>
+          </div>
+        </div>
+        <div class="sos-mobil-block-left-box">
+          <div class="sos-mobil-block-left-box-icon">
+            <span class="flaticon-bell"></span>
+          </div>
+          <div class="sos-mobil-block-left-box-text">
+            <p class="sos-mobil-block-left-box-text-title">
+            <?= $page->getValue('2_zagolovok') ?>
+            </p>
+            <p class="sos-mobil-block-left-box-text-text">
+              <?= $page->getValue('2_tekst') ?>
+      </p>
+          </div>
+        </div>
+        <div class="sos-mobil-block-left-box">
+          <div class="sos-mobil-block-left-box-icon">
+            <span class="flaticon-medical-history"></span>
+          </div>
+          <div class="sos-mobil-block-left-box-text">
+            <p class="sos-mobil-block-left-box-text-title">
+            <?= $page->getValue('3_zagolovok') ?>
+            </p>
+            <p class="sos-mobil-block-left-box-text-text">
+                <?= $page->getValue('3_tekst') ?>
+            </p>
+          </div>
+        </div>
+        <div class="sos-mobil-block-left-box">
+          <div class="sos-mobil-block-left-box-icon">
+            <span class="flaticon-bar-chart"></span>
+          </div>
+          <div class="sos-mobil-block-left-box-text">
+            <p class="sos-mobil-block-left-box-text-title">
+          <?= $page->getValue('4_zagolovok') ?>
+            </p>
+            <p class="sos-mobil-block-left-box-text-text">
+            <?= $page->getValue('4_tekst') ?>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="sos-mobil-block-center">
+        <img src="<?= $page->getValue('kartinka_po_centru') ?>" alt="" class="sos-mobil-block-center-img">
+      </div>
+      <div class="sos-mobil-block-right">
+        <div class="sos-mobil-block-right-box">
+          <div class="sos-mobil-block-right-box-icon">
+            <span class="flaticon-earth-grid-symbol"></span>
+          </div>
+          <div class="sos-mobil-block-right-box-text">
+            <p class="sos-mobil-block-right-box-text-title">
+            <?= $page->getValue('1_zagolovok_sprava'); ?>
+              </p>
+            <p class="sos-mobil-block-right-box-text-text">
+                <?= $page->getValue('1_tekst_sprava'); ?>
+            </p>
+          </div>
+        </div>
+        <div class="sos-mobil-block-right-box">
+          <div class="sos-mobil-block-right-box-icon">
+            <span class="flaticon-notification"></span>
+          </div>
+          <div class="sos-mobil-block-right-box-text">
+            <p class="sos-mobil-block-right-box-text-title">
+                <?= $page->getValue('2_zagolovok_sprava'); ?>
+            </p>
+            <p class="sos-mobil-block-right-box-text-text">
+                <?= $page->getValue('2_tekst_sprava'); ?>
+            </p>
+          </div>
+        </div>
+        <div class="sos-mobil-block-right-box">
+          <div class="sos-mobil-block-right-box-icon">
+            <span class="flaticon-call-center"></span>
+          </div>
+          <div class="sos-mobil-block-right-box-text">
+            <p class="sos-mobil-block-right-box-text-title">
+              <?= $page->getValue('3_zagolovok_sprava'); ?>
+            </p>
+            <p class="sos-mobil-block-right-box-text-text">
+                <?= $page->getValue('3_tekst_sprava'); ?>
+            </p>
+          </div>
+        </div>
+        <div class="sos-mobil-block-right-box">
+          <div class="sos-mobil-block-right-box-icon">
+            <span class="flaticon-camera"></span>
+          </div>
+          <div class="sos-mobil-block-right-box-text">
+            <p class="sos-mobil-block-right-box-text-title">
+              <?= $page->getValue('4_zagolovok_sprava'); ?>
+            </p>
+            <p class="sos-mobil-block-right-box-text-text">
+                <?= $page->getValue('4_tekst_sprava'); ?>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="sos-mobil-block-wrap3">
+      <p class="sos-mobil-block-wrap3-text">
+        Хотите подключить тревожную кнопку прямо сейчас?
+      </p>
+      <button type="button" class="main-btn">
+        Подключить
+      </button>
+    </div>
+    <div class="main-box__wrap1">
+      <div class="main-box__left">
+        <h2 class="title-h2">
+  <?= $page->getValue('zagolovok_nizhnij'); ?>
+  </h2>
+        <p class="main-box__left_text">
+          <?= $page->getValue('nadpis_nizhe_zagolovka'); ?>
+        </p>
+        <span class="main-box__left_text1">
+          <?= $page->getValue('osnovnoj_blok_teksta'); ?>
+
+        </span>
+        <div class="main-box__left_wrap">
+          <a href="<?= $page->getValue('ssylka_epl_stor') ?>">
+            <img src="assets/images/home/app-store.png" class="main-box__left_img" alt="">
+          </a>
+          <a href="<?= $page->getValue('ssylka_gugl_plej') ?>">
+            <img src="assets/images/home/google-play.png" class="main-box__left_img1" alt="">
+          </a>
+        </div>
+      </div>
+      <div class="main-box__right">
+        <div class="main-box__right_img">
+          <div class="main-box__right_img-element"></div>
+          <a href="#">
+            <img src="<?= $page->getValue('bottom_pick') ?>" alt="">
+          </a>
+          <div class="main-box__right_img-element1"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

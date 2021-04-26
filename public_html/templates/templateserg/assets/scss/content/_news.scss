@@ -1,0 +1,181 @@
+.news-page {
+   padding-bottom: 47px;
+}
+
+.news-page__title_wrap {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    margin-top: 21px;
+    .news-page__title {
+        font-size: 29.17px;
+        @include ptSans(400);
+        letter-spacing: .3px;
+    }
+    .news-page__pagination {
+        display: flex;
+        align-items: center;
+        .pagination-number {
+            margin-right: 20px;
+            .pagination-number-link {
+                color: $silverT;
+                //margin-right: 15px;
+                letter-spacing: 3px;
+                font-size: 18.75px;
+            }
+            .pagination-number-link-curent {
+                color: $btn;
+            }
+            @include max-screen(480px) {
+                order: 2;
+                margin-right: 0;
+            }
+        }
+        .pagination-arrow {
+            display: flex;
+            @include max-screen(480px) {
+                order: 1;
+                margin-bottom: 10px;
+            }
+            .pagination-arrow-link1 {
+                transform: rotate(180deg);
+                width: 30px;
+                height: 30px;
+                border: 1px solid $btn;
+                color: $btn;
+                margin-right: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .pagination-arrow-link2 {
+                width: 30px;
+                height: 30px;
+                border: 1px solid $btn;
+                color: $btn;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .flaticon-arrow-pointing-to-right::before {
+                font-size: 16px;
+                color: $btn;
+            }
+        }
+
+    }
+}
+
+.news-page__news {
+    display: block;
+    background-color: $silverSv1;
+    padding: 40px 30px 35px 36px;
+    margin-bottom: 27px;
+    &:last-child {
+        margin-bottom: 0;
+    }
+    .news-page__title-h3 {
+        font-size: 16.67px;
+        @include ptSans(700);
+        margin-bottom: 11px;
+        line-height: 1.599;
+        color: $silverT;
+    }
+    .news-page__text  {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+          white-space: pre-wrap;
+      p {
+      white-space: pre-wrap;
+        margin-bottom: 12px;
+        line-height: 1.365;
+        @include ptSans(400);
+        color: $silverT;
+      }
+    }
+}
+
+// --- Страница одна новость -------------------------------------------
+
+.new-one {
+    min-height: 1px;
+    padding-bottom: 49px;
+    .news-page__title {
+        font-size: 29.17px;
+        @include ptSans(400);
+        letter-spacing: .3px;
+        margin-top: 21px;
+        margin-bottom: 21px;
+    }
+    .new-one__title {
+        font-size: 18.75px;
+        @include ptSans(400);
+        margin-bottom: 21px;
+    }
+    p {
+        margin-bottom: 10px;
+        line-height: 1.464;
+    }
+    ul li  {
+        margin-bottom: 10px;
+        padding-left: 30px;
+        position: relative;
+        line-height: 1.464;
+        &:before {
+            content: '';
+            display: block;
+            width: 10px;
+            height: 10px;
+            background-color: $btn;
+            position: absolute;
+            top: 6px;
+            left: 2px;
+        }
+    }
+    .new-one__btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: .7s;
+        border: 1px solid $btn;
+        margin-top: 26px;
+        width: 205px;
+        height: 42px;
+    }
+}
+.new-one .new-one__title, .new-one .news-page__title {
+font-weight: 600;
+}
+.news-page__title_wrap .news-page__title {
+  font-weight: 600;
+}
+.news-page__news  {
+  &:hover {
+    box-shadow: 0 0 10px 5px rgba(221, 221, 221, 1);
+  }
+}
+
+a.pagination-number-link.no-color {
+  background: none;
+  letter-spacing: 1px!important;
+  color: #665564!important;
+  pointer-events: none;
+}
+.news-page__title_wrap .news-page__pagination .pagination-number .pagination-number-link {
+color: white;
+    font-size: 13.75px;
+}
+a.pagination-number-link.pagination-number-link-curent {
+  color: orange!important;
+}
+
+
+.breadcrumbs {
+  a {
+    &:visited {
+      text-decoration: none;
+      color: unset;
+    }
+  }
+}

@@ -1,0 +1,32 @@
+<?php
+/**
+ * Страница новости.
+ *
+ * @var umiTemplaterPHP|ViewPhpExtension|DemomarketPhpExtension $this
+ * @var array $variables
+ * @var iUmiHierarchyElement $newsItem
+ */
+
+$newsItem = $variables['page'];
+
+
+
+?>
+<main class="new-one">
+  <div class="container">
+    	<?= $this->render($variables, 'library/breadcrums')  ?>
+    <h2 class="news-page__title">
+      Наши новости
+    </h2>
+    <h3 class="new-one__title">
+          <?= $newsItem->getValue('h1'); ?>
+    </h3>
+
+
+      <?= $newsItem->getValue('content'); ?>
+
+    <a href="/osnovnaya-lenta/" class="new-one__btn main-btn">
+      Назад к новостям
+    </a>
+  </div>
+</main>

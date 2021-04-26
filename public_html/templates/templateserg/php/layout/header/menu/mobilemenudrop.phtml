@@ -1,0 +1,44 @@
+<?php
+
+$headerwhitemenu = ($this->macros('menu', 'draw', array('headerwhitemenu')))['item'];
+
+foreach ($headerwhitemenu as $key => $value) {
+
+  // Отрисовываем 1 пункт меню
+
+
+  if ( isset($value['sub_menu']) ){
+      $doch = $value['items'];
+      $twoelement = $doch['item'];
+      ?>
+      <div class="menu-item both mobiledropmenu">
+        <a class="alow" href="javascript:void(0);>"> <?= $value['name'] ?> <i class="fas fa-angle-down"></i></a> 
+        <ul>
+          <div class="hr"> </div>
+
+
+          <?php
+            foreach ($twoelement as $key => $value) { ?>
+              <li>
+                <a href="<?= $value['link'] ?>"><?= $value['name'] ?></a>
+              </li>
+
+              <?
+            }
+           ?>
+          </ul>
+      </div>
+
+      <?
+      }
+      else { ?>
+        <div class="menu-item both">
+          <a class="alow" href="<?= $value['link'] ?>"> <?= $value['name'] ?></a>
+        </div>
+        <?php
+      }
+
+}
+
+
+?>

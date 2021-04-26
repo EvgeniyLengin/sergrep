@@ -1,0 +1,110 @@
+<?php
+/**
+ * Шапка сайта:
+ *   - Все всплывающие окна на сайте (скрыты по умолчанию)
+ *   - Меню основных страниц сайта, разбитое на две части - левую и правую
+ *   - Блок с логотипом сайта, формой "Заказать звонок", режимом работы и корзиной товаров
+ *   - Блок с меню каталога товаров, формой поиска, кнопкой сравнения товаров, кнопки входа на сайт (или панели управления пользователя)
+ *
+ * @var umiTemplaterPHP|ViewPhpExtension|DemomarketPhpExtension $this
+ * @var array $variables
+ */
+?>
+
+
+<?php
+
+$status = $variables['user']['type'];
+
+if($status == "guest") {
+    $ssilka = "/auth-user/";
+} else {
+  $dopclass = "activedonation";
+  $nickname = " | ".$status = $variables['user']['login'];
+  $ssilka = "/personal-area/";
+}
+
+
+
+
+
+$homepage = $this->getPageById(312);
+
+
+
+?>
+
+
+<header class="header">
+        <div class="absolute-line">
+        </div>
+        <div class="wrap1920">
+          <div class="left-block">
+              <div class="top-white"></div>
+              <div class="red-left"></div>
+              <div class="bot-white"></div>
+          </div>
+
+          <div class="logo-container">
+          <a href="/">  <img src="<?= $homepage->getValue('logotip_sajta'); ?>" alt=""></a>
+          </div>
+
+          <div class="content-header">
+            <div class="top-white">
+                <div class="wrapper-top">
+                  <div class="tel-and-button">
+                    <div class="phone_wrap">
+                      <img src="assets/images/smartphone-with-shield.png" alt="" class="phone_icon">
+                      <a class="tell-in-header" href="tel:+<?= $homepage->getValue('nomer_telefona_dlya_kompyutera_pisat_bez_probela'); ?>"><?= $homepage->getValue('nomer_telefona_vidno_polzovatelyu'); ?></a>
+                          <a class="button-zv" href="javascript:void(0);">Заказать звонок</a>
+                    </div>
+
+
+                  </div>
+                  <div class="kab-and-bs">
+                    <img src="assets/images/fingerprint.png" alt="">
+                    <span class="lc-cb psevdo"><a href="<?= $ssilka ?>">Личный кабинет<?= $nickname ?></a></span>
+                    <span class="lc-cb <?= $dopclass; ?>">Пополнить баланс</span>
+                  </div>
+
+                </div>
+            </div>
+            <div class="center-menu">
+              <?= $this->render($variables, 'layout/header/menu/headerredmenu') ?>
+            </div>
+            <div class="bot-white">
+
+              <?= $this->render($variables, 'layout/header/menu/whitemenu') ?>
+
+                        <div class="kab-and-bs">
+                          <img src="assets/images/fingerprint.png" alt="">
+                          <span class="lc-cb psevdo"><a href="<?= $ssilka ?>">Личный кабинет<?= $nickname ?></a></span>
+                          <span class="lc-cb">Пополнить баланс</span>
+                          <div class="hamb-wrap">
+                          <div class="hamburger">
+                        </div>
+                        </div>
+
+
+                      </div>
+            </div>
+
+
+
+
+          </div>
+            <div class="dight-kostyl">
+                  <div class="red-col"></div>
+            </div>
+        </div>
+
+      <div class="mobile-menu-hamb">
+              <div class="wrap-exit">
+              <div class="exit"></div>
+              </div>
+              <div class="menu-ham">
+                <?= $this->render($variables, 'layout/header/menu/headerredmenu') ?>
+                <?= $this->render($variables, 'layout/header/menu/mobilemenudrop') ?>
+              </div>
+      </div>
+</header>

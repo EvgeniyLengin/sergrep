@@ -1,0 +1,207 @@
+<?php
+
+  $page = $variables['page'];
+
+
+?>
+<main>
+  <div class="container">
+      <?= $this->render(false, 'library/breadcrums')  ?>
+  </div>
+  <div class="wrapper-montag">
+      <h4><?= $page->getValue('h1'); ?></h4>
+
+      <div class="one-content-wrap">
+            <div class="image-div">
+                    <img src="<?=  $page->getValue('izobrazhenie_pod_zagolovkom') ?>" alt="">
+            </div>
+            <div class="content-div-mon">
+                          <?= $page->getValue('tekstovyj_blok_sprava') ?>
+            </div>
+
+      </div>
+
+      <div class="one-content-wrap two">
+
+            <div class="content-div-mon two">
+              <?= $page->getValue('tekstovyj_blok_sleva') ?>
+
+            </div>
+            <div class="image-divtwo">
+                    <img src="  <?= $page->getValue('vtoroe_izobrazhenie_sprava') ?>" alt="">
+            </div>
+      </div>
+      <h5><?= $page->getValue('zagolovok_pered_tablicej') ?></h5>
+
+      <div class="container-for-price-table one-table">
+        <div class="table-wrapper-lv-one">
+          <div class="heading-wrap-table">
+            <div class="left-one-h">Наименование работ</div>
+            <div class="kol-tab">Количество</div>
+            <div class="sum-tab">Сумма в рублях</div>
+          </div>
+          <?php
+          $tableone = $page->getValue('tablica_pervaya');
+
+          foreach ($tableone as $key => $value) {
+            $stroka = $this->getObjectById($value);
+            ?>
+            <div class="standard-item-table" >
+              <div class="left-one-h standard" ><?= $stroka->getValue('nazvanie')  ?></div>
+              <div class="kol-tab standard calculate" tmp_active=""><input  type="text" placeholder="Введите число"  maxlength="4" ></input></div>
+              <div class="sum-tab standard result" data-price="<?= $stroka->getValue('stoimost_za_edinicu')  ?>"><?= $stroka->getValue('stoimost_za_edinicu')  ?></div>
+            </div>
+
+
+          <?php
+          }
+
+           ?>
+
+          <div class="standard-item-table absorbe">
+            <div class="left-one-h standard absorbe">ИТОГО</div>
+            <div class="sum-tab standard absorbe result">0</div>
+          </div>
+
+        </div>
+      </div>
+
+
+      <div class="content-fif-div">
+        <div class="le-content-d">
+      <?= $page->getValue('tekst_sleva') ?>
+        </div>
+        <div class="ri-content-d">
+            <div class="item-parents">
+              <div class="wrapper-bord">
+                <div class="zag-let">
+                  <span>  <?= $page->getValue('nazvanie') ?></span>
+                  <p>  <?= $page->getValue('cena') ?></p>
+                </div>
+                <div class="right-text-pt">
+                  <?= $page->getValue('opisanie_dlya_pervogo_elementa') ?>
+                </div>
+              </div>
+
+            </div>
+            <div class="item-parents">
+              <div class="wrapper-bord">
+                <div class="zag-let">
+                  <span><?= $page->getValue('nazvanie_dlya_vtorogo_bloka') ?></span>
+                  <p><?= $page->getValue('cena_dlya_vtorogo_bloka') ?></p>
+                </div>
+                <div class="right-text-pt">
+                <?= $page->getValue('opisanie_dlya_vtorogo_bloka') ?>
+                </div>
+
+              </div>
+            </div>
+            <div class="item-parents">
+              <div class="wrapper-bord">
+                <div class="zag-let">
+                  <span><?= $page->getValue('nazvanie_dlya_tretego_bloka') ?></span>
+                  <p><?= $page->getValue('cena_tretego_bloka') ?></p>
+                </div>
+                <div class="right-text-pt">
+                  <?= $page->getValue('opisanie_tretego_bloka') ?>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+
+
+
+      <h5 class="twoh5"><?= $page->getValue('nazvanie_vtoroj_tablicy') ?></h5>
+
+      <div class="container-for-price-table two-table">
+        <div class="table-wrapper-lv-one">
+          <div class="heading-wrap-table">
+            <div class="left-one-h">Наименование работ</div>
+            <div class="kol-tab">Количество</div>
+            <div class="sum-tab">Сумма в рублях</div>
+          </div>
+          <?php $table = $page->getValue('vtoraya_tablica');
+          foreach ($table as $key => $value) {
+            $onestoke = $this->getObjectById($value);
+            ?>
+            <div class="standard-item-table">
+              <div class="left-one-h standard">  <?=  $onestoke->getValue('nazvanie2') ?></div>
+              <div class="kol-tab standard"><input type="text" placeholder="Введите число" maxlength="4"></input></div>
+              <div class="sum-tab standard cenn" data-permanent="<?= $onestoke->getValue('cena2')  ?>" data-price="<?= $onestoke->getValue('cena2')  ?>"><?= $onestoke->getValue('cena2') ?></div>
+            </div>
+            <?php
+          }
+
+            ?>
+
+            <?php
+            $perv = $page->getValue('vklyuchit');
+            if (isset($perv)) {
+
+            ?>
+
+            <div class="standard-item-table">
+              <div class="left-one-h standard one_m">Коэффициент при работах в эксплуатируемых зданиях</div>
+              <div class="kol-tab standard"></div>
+              <div class="sum-tab standard"><label for="eks-z"></label><input id="eks-z" class="chbk1"  type="checkbox"></div>
+              <input class="onem" type="hidden" name="" value="<?= $page->getValue('procent_pribavki_ukazyvat_bez')?>">
+            </div>
+             <?php
+          }
+             ?>
+             <?php
+             $perv2 = $page->getValue('vklyuchit_2');
+             if (isset($perv2)) {
+
+             ?>
+             <div class="standard-item-table">
+               <div class="left-one-h standard two_m">Коэффициент при работах на высоте от 2 до 8 м от уровня пола</div>
+               <div class="kol-tab standard"></div>
+               <div class="sum-tab standard"><label for="vusota"></label><input id="vusota" class="chbk1"  type="checkbox"></div>
+               <input class="twom" type="hidden" name="" value="<?= $page->getValue('procent_pribavki_dlya_vtorogo_mnozhitelya_bez')?>">
+             </div>
+
+              <?php
+           }
+              ?>
+              <?php
+              $perv3 = $page->getValue('vklyuchit_3');
+              if (isset($perv3)) {
+
+              ?>
+              <div class="standard-item-table">
+                <div class="left-one-h standard thre_m">Коэффициент при работах в стесненных условиях</div>
+                <div class="kol-tab standard"></div>
+                <div class="sum-tab standard"><label for="usl"></label><input id="usl" class="chbk1" type="checkbox"></div>
+                <input class="threm" type="hidden" name="" value="<?= $page->getValue('procent_pribavki_dlya_tretego_mnozhitelya_bez')?>">
+              </div>
+               <?php
+            }
+               ?>
+
+
+
+
+          <div class="standard-item-table absorbe">
+            <div class="left-one-h standard absorbe">ИТОГО</div>
+            <div class="sum-tab standard absorbe result">0</div>
+          </div>
+
+        </div>
+      </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</main>

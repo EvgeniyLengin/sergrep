@@ -1,0 +1,24 @@
+@import '../fonts/gothampro/stylesheet.css';
+@import '../fonts/ptsans/stylesheet.css';
+@import '../fonts/flaticon/font/flaticon.css';
+@import '../fonts/fl/font/flaticon.css';
+
+
+$gothamPro: 'Gotham Pro';
+$ptSans: 'PT Sans';
+
+@mixin font-family($font) {
+    font-family: $font, sans-serif;
+}
+
+@mixin ptSans($weight:400, $style:normal) {
+    @include font-family ($ptSans);
+    font-weight: $weight;
+    font-style: $style;
+}
+
+@mixin gothamPro($weight:400, $style:normal) {
+    @include font-family ($gothamPro);
+    font-weight: $weight;
+    font-style: $style;
+}

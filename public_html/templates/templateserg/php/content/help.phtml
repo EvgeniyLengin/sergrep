@@ -1,0 +1,645 @@
+<?php $page = $variables['page']; ?>
+
+<main class="main-info">
+  <div class="container">
+        <?= $this->render(false, 'library/breadcrums')  ?>
+    <h2 class="main-info-title">
+      <?= $page->getValue('h1') ?>
+    </h2>
+    <div class="main-info-list-wrap">
+      <a href="javascript:void(0);" class="main-info-list one main-info-list-active">
+        <span class="main-info-list-icon flaticon-question"></span>
+        <span class="main-info-list-text">
+          Ответы на вопросы
+        </span>
+      </a>
+      <a href="javascript:void(0);" class="main-info-list two">
+        <span class="main-info-list-icon flaticon-inbox"></span>
+        <span class="main-info-list-text">
+          Полезные Документы
+        </span>
+      </a>
+      <a href="javascript:void(0);" class="main-info-list three">
+        <span class="main-info-list-icon flaticon-credit-card"></span>
+        <span class="main-info-list-text">
+          Способы оплаты
+        </span>
+      </a>
+      <a href="javascript:void(0);" class="main-info-list fo">
+        <span class="main-info-list-icon flaticon-open-book"></span>
+        <span class="main-info-list-text">
+          Как работает система
+        </span>
+      </a>
+      <a href="javascript:void(0);" class="main-info-list five">
+        <span class="main-info-list-icon flaticon-application"></span>
+        <span class="main-info-list-text">
+          Мобильное приложение
+        </span>
+      </a>
+    </div>
+
+
+
+    <div class="main-info-question-wrap disp-flex-for-important-menu">
+      <div class="main-info-question">
+        <h3 class="main-info-h3">
+          <?= $page->getValue('zagolovok_levogo_bloka_voprosov'); ?>
+        </h3>
+        <div id="accordion" class="main-info-question-acc">
+
+          <?php
+        $leftvopr = $page->getValue('levyj_blok_voprosov_i_otvetov');
+        foreach ($leftvopr as $key => $value) {
+          $onequest = $this->getObjectById($value);
+          ?>
+          <a href="#" class="main-info-question-acc-link"><?= $onequest->getValue('vopros_vidno_polzovatelyu'); ?></a>
+          <div class="main-info-question-acc-text">
+          <?= $onequest->getValue('otvet_na_vopros'); ?>
+          </div>
+          <?php
+          }
+           ?>
+
+
+        </div>
+      </div>
+      <div class="main-info-question1">
+        <h3 class="main-info-h3">
+          <?= $page->getValue('zagolovok_pravogo_bloka_voprosov'); ?>
+        </h3>
+        <div id="accordion1" class="main-info-question-acc">
+            <?php
+            $rightvopr = $page->getValue('pravyj_blok_voprosov');
+            foreach ($rightvopr as $key => $value) {
+            $onerightv = $this->getObjectById($value);
+            ?>
+            <a href="#" class="main-info-question-acc-link"><?= $onerightv->getValue('vopros') ?></a>
+            <div class="main-info-question-acc-text">
+              <?= $onerightv->getValue('otvet') ?>
+            </div>
+
+            <?php
+              }
+             ?>
+
+
+        </div>
+      </div>
+    </div>
+    <div class="mobile-info-block">
+      <div class="control-panel-in-infoblock">
+          <h3>  <?= $page->getValue('zagolovok_etoj_chasti'); ?></h3>
+          <span class="mobi-klaviature active-class"><?= $page->getValue('vlozhennaya_stranica_1_nazvanie'); ?></span>
+          <span class="mobi-knopk"><?= $page->getValue('nazvanie_stranicy_punkt_sleva'); ?></span>
+      </div>
+      <div class="content-div-swap one active-display">
+              <div class="one-content-block">
+                      <div class="img-div">
+                        <img src="<?= $page->getValue('verhnyaya_kartinka'); ?>" alt="">
+
+                      </div>
+                      <div class="right-conent-block">
+                        <?= $page->getValue('kontent_pered_qar'); ?>
+                              <div class="semi-content">
+
+                                  <div class="left-div-content">
+                                      <?= $page->getValue('sleva_ot_qar'); ?>
+
+                                  </div>
+                                  <div class="right-div-qar">
+                                          <h5>Скачать приложение бесплатно:</h5>
+                                          <div class="qar-block">
+                                                <div class="appstore">
+                                                    <img class="aplestore" src="assets/images/info/apple_download.png" alt="">
+                                                    <img class="apleqar" src="  <?= $page->getValue('apple_qar'); ?>" alt="">
+                                                </div>
+                                                <div class="googleplay">
+                                                    <img class="gplay" src="assets/images/info/google-store.png" alt="">
+                                                    <img class="gqar" src="  <?= $page->getValue('gplay_qar'); ?>" alt="">
+                                                </div>
+                                          </div>
+                                  </div>
+
+                              </div>
+                      </div>
+
+              </div>
+              <div class="two-content-block">
+                <?= $page->getValue('kontent_pered_vtoroj_fotografiej'); ?>
+
+                <div class="protect-pt">
+                      <div class="image-contein">
+                        <img class="protect-tel" src="<?= $page->getValue('vtoraya_fotografiya'); ?>" alt="">
+
+                      </div>
+                     
+                      <div class="preim-contain">
+                                <ul class="protect-ul">
+                                  <?php  $preimhelp = $page->getValue('vyvod_teksta');
+
+                                  foreach ($preimhelp as $key => $value) {
+                                    $onepreimhelp = $this->getObjectById($value);
+                                    ?>
+                                    <li><?= $onepreimhelp->getValue('vyvod_teksta'); ?></li>
+
+                                    <?
+
+                                  }
+
+                                     ?>
+
+
+                                </ul>
+
+                      </div>
+                </div>
+
+
+              </div>
+
+
+
+      </div>
+      <div class="content-div-swap two">
+        <div class="one-content-block">
+                <div class="img-div">
+                  <img src="  <?= $page->getValue('pervaya_kartinka_2str') ?>" alt="">
+
+                </div>
+                <div class="right-conent-block">
+                        <h4><?= $page->getValue('zagolovok_pervogo_bloka_2str') ?></h4>
+                        <?= $page->getValue('tekst_pod_zagolovkom_2str') ?>
+                        <div class="semi-content">
+
+                            <div class="left-div-content">
+                              <?= $page->getValue('tekst_sleva_ot_qar_2str') ?>
+                            </div>
+                            <div class="right-div-qar">
+                                    <h5>Скачать приложение бесплатно:</h5>
+                                    <div class="qar-block">
+                                          <div class="appstore">
+                                              <img class="aplestore" src="assets/images/info/apple_download.png" alt="">
+                                              <img class="apleqar" src="<?= $page->getValue('apple_qar'); ?>" alt="">
+                                          </div>
+                                          <div class="googleplay">
+                                              <img class="gplay" src="assets/images/info/google-store.png" alt="">
+                                              <img class="gqar" src="<?= $page->getValue('gplay_qar'); ?>" alt="">
+                                          </div>
+                                    </div>
+                            </div>
+
+                        </div>
+                </div>
+
+        </div>
+        <div class="two-content-block">
+          <?= $page->getValue('srednyaya_chast_kontenta'); ?>
+          <div class="protect-pt">
+                <div class="image-contein">
+                  <img class="protect-tel" src="<?= $page->getValue('vtoraya_kartinka_2str'); ?>" alt="">
+
+                </div>
+
+                <div class="preim-contain">
+                          <ul class="protect-ul">
+                            <?php  $preimhelp2 = $page->getValue('preimuwestva_2str');
+
+                            foreach ($preimhelp2 as $key => $value) {
+                              $onepreimhelp2 = $this->getObjectById($value);
+                              ?>
+                              <li><?= $onepreimhelp2->getValue('punkty_preimuwestv_2str'); ?></li>
+
+                              <?
+
+                            }
+
+                               ?>
+
+                          </ul>
+
+                </div>
+          </div>
+
+
+        </div>
+
+      </div>
+
+
+    </div>
+    <div class="pos-documents">
+
+
+      <?php  $sprav4 = $page->getValue('sekcii_i_dokumenty');
+
+        foreach ($sprav4 as $key => $value) {
+        $oneblock4 = $this->getObjectById($value);
+
+
+       ?>
+              <h4><?= $oneblock4->getValue('zagolovok_bloka_s_dokumentami') ?></h4>
+
+              <div class="first-doc-block two">
+                <div class="doc-container">
+                    <a class="one-dock" href="<?= $oneblock4->getValue('dokument_1'); ?>" download >
+                          <img class="logo-dock" src="<?php
+                          $thisfile = $oneblock4->getValue('dokument_1');
+                            $infofile = pathinfo($thisfile);
+                            $thispath = $infofile['extension'];
+                            switch ($thispath) {
+                                case pdf:
+                                    $put = "assets/images/info/pdf.png";
+                                    break;
+                                case doc:
+                                  $put = "assets/images/info/doc-file-format-symbol.png";
+                                    break;
+                                case xls:
+                                    $put = "assets/images/info/xls.png";
+                                    break;
+                                default:
+                            }
+                            echo $put; ?>" alt="">
+                        <div class="name-block-for-dock">
+                          <span class="name-dock"><?= $oneblock4->getValue('nazvanie_1'); ?></span>
+                          <span class="description-dock"><?= $oneblock4->getValue('vtoraya_strochka_1'); ?></span>
+                        </div>
+
+                    </a>
+                    <a class="one-dock" href="<?= $oneblock4->getValue('dokument_2'); ?>" download >
+                        <img class="logo-dock" src="<?php
+                        $thisfile = $oneblock4->getValue('dokument_2');
+                          $infofile = pathinfo($thisfile);
+                          $thispath = $infofile['extension'];
+                          switch ($thispath) {
+                              case pdf:
+                                  $put = "assets/images/info/pdf.png";
+                                  break;
+                              case doc:
+                                $put = "assets/images/info/doc-file-format-symbol.png";
+                                  break;
+                              case xls:
+                                  $put = "assets/images/info/xls.png";
+                                  break;
+                              default:
+                          }
+                          echo $put; ?>" alt="">
+                        <div class="name-block-for-dock">
+                          <span class="name-dock"><?= $oneblock4->getValue('nazvanie_2'); ?></span>
+                          <span class="description-dock"><?= $oneblock4->getValue('vtoraya_strochka_2'); ?></span>
+                        </div>
+
+                    </a>
+                    <a class="one-dock" href="<?= $oneblock4->getValue('dokument_3'); ?>" download >
+                      <img class="logo-dock" src="<?php
+                      $thisfile = $oneblock4->getValue('dokument_3');
+                        $infofile = pathinfo($thisfile);
+                        $thispath = $infofile['extension'];
+                        switch ($thispath) {
+                            case pdf:
+                                $put = "assets/images/info/pdf.png";
+                                break;
+                            case doc:
+                              $put = "assets/images/info/doc-file-format-symbol.png";
+                                break;
+                            case xls:
+                                $put = "assets/images/info/xls.png";
+                                break;
+                            default:
+                        }
+                        echo $put; ?>" alt="">
+                        <div class="name-block-for-dock">
+                          <span class="name-dock"><?= $oneblock4->getValue('nazvanie_3'); ?></span>
+                          <span class="description-dock"><?= $oneblock4->getValue('vtoraya_strochka_3'); ?></span>
+                        </div>
+
+                    </a>
+                </div>
+                <div class="doc-container">
+                    <a class="one-dock" href="<?= $oneblock4->getValue('dokument_4'); ?>" download >
+                          <img class="logo-dock" src="<?php
+                          $thisfile = $oneblock4->getValue('dokument_4');
+                            $infofile = pathinfo($thisfile);
+                            $thispath = $infofile['extension'];
+                            switch ($thispath) {
+                                case pdf:
+                                    $put = "assets/images/info/pdf.png";
+                                    break;
+                                case doc:
+                                  $put = "assets/images/info/doc-file-format-symbol.png";
+                                    break;
+                                case xls:
+                                    $put = "assets/images/info/xls.png";
+                                    break;
+                                default:
+                            }
+                            echo $put; ?>" alt="">
+                        <div class="name-block-for-dock">
+                          <span class="name-dock"><?= $oneblock4->getValue('nazvanie_4'); ?></span>
+                          <span class="description-dock"><?= $oneblock4->getValue('vtoraya_strochka_4'); ?></span>
+                        </div>
+
+                    </a>
+                    <a class="one-dock" href="<?= $oneblock4->getValue('dokument_5'); ?>" download >
+                          <img class="logo-dock" src="<?php
+                          $thisfile = $oneblock4->getValue('dokument_5');
+                            $infofile = pathinfo($thisfile);
+                            $thispath = $infofile['extension'];
+                            switch ($thispath) {
+                                case pdf:
+                                    $put = "assets/images/info/pdf.png";
+                                    break;
+                                case doc:
+                                  $put = "assets/images/info/doc-file-format-symbol.png";
+                                    break;
+                                case xls:
+                                    $put = "assets/images/info/xls.png";
+                                    break;
+                                default:
+                            }
+                            echo $put; ?>" alt="">
+                        <div class="name-block-for-dock">
+                          <span class="name-dock"><?= $oneblock4->getValue('nazvanie_5'); ?></span>
+                          <span class="description-dock"><?= $oneblock4->getValue('vtoraya_strochka_5'); ?></span>
+                        </div>
+
+                    </a>
+                    <a class="one-dock" href="<?= $oneblock4->getValue('dokument_6'); ?>" download >
+                          <img class="logo-dock" src="<?php
+                          $thisfile = $oneblock4->getValue('dokument_6');
+                            $infofile = pathinfo($thisfile);
+                            $thispath = $infofile['extension'];
+                            switch ($thispath) {
+                                case pdf:
+                                    $put = "assets/images/info/pdf.png";
+                                    break;
+                                case doc:
+                                  $put = "assets/images/info/doc-file-format-symbol.png";
+                                    break;
+                                case xls:
+                                    $put = "assets/images/info/xls.png";
+                                    break;
+                                default:
+                            }
+                            echo $put; ?>" alt="">
+                        <div class="name-block-for-dock">
+                          <span class="name-dock"><?= $oneblock4->getValue('nazvanie_6'); ?></span>
+                          <span class="description-dock"><?= $oneblock4->getValue('vtoraya_strochka_6'); ?></span>
+                        </div>
+
+                    </a>
+                </div>
+                <div class="doc-container">
+                    <a class="one-dock" href="<?= $oneblock4->getValue('dokument_7'); ?>" download >
+                          <img class="logo-dock" src="<?php
+                          $thisfile = $oneblock4->getValue('dokument_7');
+                            $infofile = pathinfo($thisfile);
+                            $thispath = $infofile['extension'];
+                            switch ($thispath) {
+                                case pdf:
+                                    $put = "assets/images/info/pdf.png";
+                                    break;
+                                case doc:
+                                  $put = "assets/images/info/doc-file-format-symbol.png";
+                                    break;
+                                case xls:
+                                    $put = "assets/images/info/xls.png";
+                                    break;
+                                default:
+                            }
+                            echo $put; ?>" alt="">
+                        <div class="name-block-for-dock">
+                          <span class="name-dock"><?= $oneblock4->getValue('nazvanie_7'); ?></span>
+                          <span class="description-dock"><?= $oneblock4->getValue('vtoraya_strochka_7'); ?></span>
+                        </div>
+
+                    </a>
+                    <a class="one-dock" href="<?= $oneblock4->getValue('dokument_8'); ?>" download >
+                          <img class="logo-dock" src="<?php
+                          $thisfile = $oneblock4->getValue('dokument_8');
+                            $infofile = pathinfo($thisfile);
+                            $thispath = $infofile['extension'];
+                            switch ($thispath) {
+                                case pdf:
+                                    $put = "assets/images/info/pdf.png";
+                                    break;
+                                case doc:
+                                  $put = "assets/images/info/doc-file-format-symbol.png";
+                                    break;
+                                case xls:
+                                    $put = "assets/images/info/xls.png";
+                                    break;
+                                default:
+                            }
+                            echo $put; ?>" alt="">
+                        <div class="name-block-for-dock">
+                          <span class="name-dock"><?= $oneblock4->getValue('nazvanie_8'); ?></span>
+                          <span class="description-dock"><?= $oneblock4->getValue('vtoraya_strochka_8'); ?></span>
+                        </div>
+
+                    </a>
+                    <a class="one-dock" href="<?= $oneblock4->getValue('dokument_9'); ?>" download >
+                          <img class="logo-dock" src="<?php
+                          $thisfile = $oneblock4->getValue('dokument_9');
+                            $infofile = pathinfo($thisfile);
+                            $thispath = $infofile['extension'];
+                            switch ($thispath) {
+                                case pdf:
+                                    $put = "assets/images/info/pdf.png";
+                                    break;
+                                case doc:
+                                  $put = "assets/images/info/doc-file-format-symbol.png";
+                                    break;
+                                case xls:
+                                    $put = "assets/images/info/xls.png";
+                                    break;
+                                default:
+                            }
+                            echo $put; ?>" alt="">
+                        <div class="name-block-for-dock">
+                          <span class="name-dock"><?= $oneblock4->getValue('nazvanie_9'); ?></span>
+                          <span class="description-dock"><?= $oneblock4->getValue('vtoraya_strochka_9'); ?></span>
+                        </div>
+
+                    </a>
+                </div>
+                <div class="doc-container">
+                    <a class="one-dock" href="<?= $oneblock4->getValue('dokument_10'); ?>" download >
+                          <img class="logo-dock" src="<?php
+                          $thisfile = $oneblock4->getValue('dokument_10');
+                            $infofile = pathinfo($thisfile);
+                            $thispath = $infofile['extension'];
+                            switch ($thispath) {
+                                case pdf:
+                                    $put = "assets/images/info/pdf.png";
+                                    break;
+                                case doc:
+                                  $put = "assets/images/info/doc-file-format-symbol.png";
+                                    break;
+                                case xls:
+                                    $put = "assets/images/info/xls.png";
+                                    break;
+                                default:
+                            }
+                            echo $put; ?>" alt="">
+                        <div class="name-block-for-dock">
+                          <span class="name-dock"><?= $oneblock4->getValue('nazvanie_10'); ?></span>
+                          <span class="description-dock"><?= $oneblock4->getValue('vtoraya_strochka_10'); ?></span>
+                        </div>
+
+                    </a>
+                    <a class="one-dock" href="<?= $oneblock4->getValue('dokument_11'); ?>" download >
+                          <img class="logo-dock" src="<?php
+                          $thisfile = $oneblock4->getValue('dokument_11');
+                            $infofile = pathinfo($thisfile);
+                            $thispath = $infofile['extension'];
+                            switch ($thispath) {
+                                case pdf:
+                                    $put = "assets/images/info/pdf.png";
+                                    break;
+                                case doc:
+                                  $put = "assets/images/info/doc-file-format-symbol.png";
+                                    break;
+                                case xls:
+                                    $put = "assets/images/info/xls.png";
+                                    break;
+                                default:
+                            }
+                            echo $put; ?>" alt="">
+                        <div class="name-block-for-dock">
+                          <span class="name-dock"><?= $oneblock4->getValue('nazvanie_11'); ?></span>
+                          <span class="description-dock"><?= $oneblock4->getValue('vtoraya_strochka_11'); ?></span>
+                        </div>
+
+                    </a>
+                    <a class="one-dock" href="<?= $oneblock4->getValue('dokument_12'); ?>" download >
+                          <img class="logo-dock" src="<?php
+                          $thisfile = $oneblock4->getValue('dokument_12');
+                            $infofile = pathinfo($thisfile);
+                            $thispath = $infofile['extension'];
+                            switch ($thispath) {
+                                case pdf:
+                                    $put = "assets/images/info/pdf.png";
+                                    break;
+                                case doc:
+                                  $put = "assets/images/info/doc-file-format-symbol.png";
+                                    break;
+                                case xls:
+                                    $put = "assets/images/info/xls.png";
+                                    break;
+                                default:
+                            }
+                            echo $put; ?>" alt="">
+                        <div class="name-block-for-dock">
+                          <span class="name-dock"><?= $oneblock4->getValue('nazvanie_12'); ?></span>
+                          <span class="description-dock"><?= $oneblock4->getValue('vtoraya_strochka_12'); ?></span>
+                        </div>
+
+                    </a>
+                </div>
+              </div>
+
+     <?php
+
+      }
+     ?>
+
+
+
+
+
+    </div>
+    <div class="payment-moment">
+        <h4><?= $page->getValue('minizagolovok_stranichki'); ?></h4>
+        <div class="wrapper-content-payment">
+          <div class="menu-div-payment">
+            <span class="kvitantion"><?= $page->getValue('1_punkt'); ?></span>
+            <span class="sber-online"><?= $page->getValue('2_punkt'); ?></span>
+            <span class="avtoplat"><?= $page->getValue('3_punkt'); ?></span>
+            <span class="cards active-class"><?= $page->getValue('4_punkt'); ?></span>
+            <span class="qiwi"><?= $page->getValue('5_punkt'); ?></span>
+            <span class="beznal"><?= $page->getValue('6_punkt'); ?></span>
+          </div>
+          <div class="content-div-payment cardss disp-flex-for-important-menu">
+            <?= $page->getValue('tekst_1'); ?>
+
+          </div>
+          <div class="content-div-payment kvit">
+            <?= $page->getValue('tekst_2'); ?>
+          </div>
+          <div class="content-div-payment online">
+            <?= $page->getValue('tekst_3'); ?>
+          </div>
+          <div class="content-div-payment avtopl">
+            <?= $page->getValue('tekst_4'); ?>
+          </div>
+          <div class="content-div-payment termenal">
+            <?= $page->getValue('tekst_5'); ?>
+          </div>
+          <div class="content-div-payment untermenal">
+            <?= $page->getValue('tekst_6'); ?>
+          </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <div class="who-system">
+        <h4><?= $page->getValue('minizagolovok_kak_rabotaet_sistema')?></h4>
+        <div class="wrapper-content-payment">
+          <div class="menu-div-payments">
+            <span class="kvitantions"><?= $page->getValue('kak_rabotaet_sistema_punkt_1') ?></span>
+            <span class="sber-onlines"><?= $page->getValue('kak_rabotaet_sistema_punkt_2') ?></span>
+            <span class="avtoplats"><?= $page->getValue('kak_rabotaet_sistema_punkt_3') ?></span>
+            <span class="cardsd active-class"><?= $page->getValue('kak_rabotaet_sistema_punkt_4') ?></span>
+            <span class="qiwis"><?= $page->getValue('kak_rabotaet_sistema_punkt_5') ?></span>
+            <span class="beznals"><?= $page->getValue('kak_rabotaet_sistema_punkt_6') ?></span>
+          </div>
+          <div class="content-div-payments cardssd disp-flex-for-important-menu">
+            <?= $page->getValue('tekst_dlya_punkta_1')?>
+
+          </div>
+          <div class="content-div-payments kvits">
+                    <?= $page->getValue('tekst_dlya_punkta_2')?>
+          </div>
+          <div class="content-div-payments onlines">
+            <?= $page->getValue('tekst_dlya_punkta_3')?>
+          </div>
+          <div class="content-div-payments avtopls">
+          <?= $page->getValue('tekst_dlya_punkta_4')?>
+          </div>
+          <div class="content-div-payments termenals">
+            <?= $page->getValue('tekst_dlya_punkta_5')?>
+          </div>
+          <div class="content-div-payments untermenals">
+              <?= $page->getValue('tekst_dlya_punkta_6')?>
+          </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+        <div class="main-info-btn-wrap">
+          <p class="main-info-btn-text">
+            Не нашли, что искали? Cвяжитесь с нами, чтобы задать вопрос:
+          </p>
+          <button type="button" class="main-btn">
+            Связаться
+          </button>
+        </div>
+
+  </div>
+</main>

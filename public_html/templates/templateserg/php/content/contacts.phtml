@@ -1,0 +1,66 @@
+<?php  $page = $variables['page']; ?>
+<main class="main-contacts">
+  <div class="container">
+  <?= $this->render(false, 'library/breadcrums')  ?>
+  </div>
+  <section class="home-contacts">
+    <div class="container">
+      <h2 class="main-contacts-title">
+        <?= $page->getValue('zagolovok_stranicy') ?>
+      </h2>
+      <div class="home-contacts-wrap">
+        <div class="home-contacts-block-left">
+          <p class="home-contacts-block-left-text">
+            <?= $page->getValue('vtoraya_strochka_vopros') ?>
+          </p>
+          <p class="home-contacts-input">
+            <input type="text" placeholder="Имя (обязательное поле)" required>
+          </p>
+          <p class="home-contacts-input">
+            <input type="email" placeholder="E-mail (обязательное поле)" required>
+          </p>
+          <p class="home-contacts-input">
+            <input type="tel" placeholder="Телефон (обязательное поле)" required>
+          </p>
+          <p class="home-contacts-textarea">
+            <textarea placeholder="Сообщение (обязательное поле)" required></textarea>
+          </p>
+          <p class="home-contacts-checkbox">
+            <input type="checkbox" id="check" required>
+            <label for="check">Я согласен(а) на обработку моих персональных данных</label>
+          </p>
+          <img src="assets/images/home/google.png" class="home-contacts-google" alt="">
+          <button type="submit" class="main-btn">
+            Отправить
+          </button>
+        </div>
+        <div class="home-contacts-block-right">
+          <p class="home-contacts-after">
+            <span class="flaticon-house"></span>
+            <?= $page->getValue('adres_v_forme') ?>
+          </p>
+          <p>
+            <span class="flaticon-phone-call"></span>
+            <a href="tel:+<?= $page->getValue('pervyj_telefon_forma_dlya_robota') ?>"><?= $page->getValue('pervyj_telefon_forma_dlya_cheloveka') ?></a>
+            <a href="tel:+<?= $page->getValue('vtoroj_telefon_forma_dlya_robota') ?>"><?= $page->getValue('vtoroj_chelovek_forma_dlya_cheloveka') ?></a>
+          </p>
+          <p>
+            <span class="flaticon-e-mail-envelope"></span>
+            <a href="mailto:<?= $page->getValue('email_v_forme_mozhet_otlichatsya_ot_futera') ?>"><?= $page->getValue('email_v_forme_mozhet_otlichatsya_ot_futera') ?></a>
+          </p>
+          <p class="home-contacts-block-right-social">
+            <a href="<?= $page->getValue('pervaya_soc_set_ssylka')  ?>" target="_blank" >  <img src="<?= $page->getValue('kartinka_dlya_pervoj_soc_seti') ?>" alt=""></a>
+            <a href="<?= $page->getValue('vtoraya_socset_ssylka') ?>" target="_blank">  <img src="<?= $page->getValue('kartinka_dlya_vtoroj_socseti') ?>" alt=""></a>
+            <a href="<?= $page->getValue('tretya_socset_ssylka') ?>" target="_blank" >  <img src="<?= $page->getValue('kartinka_dlya_tretej_socseti') ?>" alt=""></a>
+            <a href="<?= $page->getValue('chetvertaya_socset_ssylka') ?>" target="_blank" >  <img src="<?= $page->getValue('kartinka_dlya_chetvertoj_soc_seti') ?>" alt=""></a>
+          </p>
+          <div class="home-contacts-img-wrap">
+            <img src="<?= $page->getValue('shema_proezda_kartinka') ?>" alt="">
+            <div class="home-contacts-element1"></div>
+            <div class="home-contacts-element2"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

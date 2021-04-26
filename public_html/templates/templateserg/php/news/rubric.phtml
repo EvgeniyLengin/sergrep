@@ -1,0 +1,58 @@
+<?php
+/**
+ * Лента новостей.
+ *
+ * @var umiTemplaterPHP|ViewPhpExtension|DemomarketPhpExtension $this
+ * @var array $variables
+ * @var iUmiHierarchyElement $rubric
+ */
+
+$rubric = $variables['page'];
+$newsList = $this->getRubricNews($rubric);
+
+?>
+
+<?php
+$news = ($this->macros('news', 'lastlist', array('osnovnaya-lenta', null, 4, false )));
+$newslistwiew = $news['items'];
+
+
+ ?>
+
+
+
+  <main class="news-page">
+    <div class="container">
+  	<?= $this->render($news, 'library/breadcrums')  ?>
+      <div class="news-page__title_wrap">
+          <h2 class="news-page__title">
+              Наши новости
+          </h2>
+          <div class="news-page__pagination">
+            	<?= $this->render($news, 'library/pagination')  ?>
+          </div>
+      </div>
+
+<?php
+$newslistwiew = $news['items'];
+foreach ($newslistwiew as $key => $value) {
+  $onenewspage = $this->getPageById($value['id']);
+  ?>
+
+  <a href="<?= $value['link'] ?>" class="news-page__news">
+      <h3 class="news-page__title-h3">
+        <?= $value['name'] ?>
+      </h3>
+      <span class="news-page__text">
+      <?= $onenewspage->getValue('anons'); ?>
+      </span>
+
+  </a>
+
+
+<?php
+}
+ ?>
+
+    </div>
+  </main>

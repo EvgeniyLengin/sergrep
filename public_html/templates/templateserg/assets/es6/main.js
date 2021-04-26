@@ -1604,14 +1604,17 @@ else {
 
     //Счетчик итоговой стоимости в доп услугах
     $(document).on('click','.main-business-wired-kit-options-icon-box-input',function(){
-
+ console.log("КЛИК");
       var active = false;
       if ($(this).hasClass('active-checbox')) {
         active = true;
       }
-
+      //Видимо, тут мы получаем "текущую цену" подключения
       let tekprice = parseInt($(this).closest('.js_summblock').find('#itogPrice').text());
+      console.log(tekprice);
+      //Видимо, тут мы получаем "текущую цену" абонентской платы
       let tekabon = parseInt($(this).closest('.js_summblock').find('#itogAbon').text());
+      console.log(tekabon);
       let tmp_podkl = $(this).closest('.js_parent').find('.js_podkl .onprc#dop-price-id').text();
       let tmp_abon = $(this).closest('.js_parent').find('.js_abon #dop-price-id').text();
 

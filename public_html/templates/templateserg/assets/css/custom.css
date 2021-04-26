@@ -1034,6 +1034,20 @@ footer .red-polos .fix-center-polos .red-left-bar span a:hover, footer .red-polo
     max-height: unset;
     height: auto;
 }
+.slick-list {
+    overflow: visible;
+}
+
+
+a.review22-box-link.slick-slide {
+/* zoom:0.4; */
+}
+
+/* SLIDER */
+a.review22-box-link.slick-slide.slick-current.slick-active.slick-center {
+/* zoom: 1; */
+}
+/* END SLIDER */
 
 @media (max-width: 992px) {
     .main-business-basic-kit-content {

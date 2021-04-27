@@ -1,0 +1,114 @@
+<?php $page = $variables['page']; ?>
+
+
+<div class="page_wrapper video">
+      <?= $this->render(false, 'library/breadcrums')  ?>
+     <div class="video__content">
+         <h1 class="content_heading_page"><?= $page->getValue('h1') ?></h1>
+         <div class="content_text_wrapper">
+             <?= $page->getValue('first_text') ?>
+
+             <div class="wrapper_img_text">
+                <?php
+                $leftImage = $page->getValue('left_image');
+                    if($leftImage): ?>
+                        <img src="<?= $leftImage ?>" alt="">
+                    <?php endif ?>
+
+                <div class="text_text">
+                    <?= $page->getValue('right_text') ?>
+                </div>
+             </div>
+
+         </div>
+         <div class="content_split">
+             <h4><?= $page->getValue('headingsplit') ?></h4>
+             <div class="wrap_text_split">
+                    <?= $page->getValue('textsplit') ?>
+             </div>
+
+         </div>
+         <div class="where_is_applied">
+             <?php
+                // Получаем айди обьектов (элементов)
+                $itemsWhereApplied = $page->getValue('oblasti_primeneniya');
+                if($itemsWhereApplied) {
+                    // Перебираем каждый элемент, запрашиваем значение полей
+                    $score = 1;
+                    foreach ($itemsWhereApplied as $key => $value) {
+                        $oneItem = $this->getObjectById($value);
+                        ?>
+                        <div class="applied__item">
+                            <div class="item_numbers">
+                                <?php echo "0".$score."."; ?>
+                            </div>
+                            <div class="item__header">
+                                <?= $oneItem->getValue('zagolovok_elementa') ?>
+                            </div>
+                            <div class="item__text">
+                                <?= $oneItem->getValue('tekst_elementa') ?>
+                            </div>
+                        </div>
+                        <?
+
+                        $score++;
+                    }
+                }
+
+
+             ?>
+
+         </div>
+         <div class="is_applied_end">
+             <?= $page->getValue('applied_end') ?>
+         </div>
+         <div class="what_consist">
+             <h4><?= $page->getValue('consist_heading') ?></h4>
+             <p><?= $page->getValue('consist_text') ?></p>
+             <!-- // -->
+             <?php
+             $consistMas = $page->getValue('spravochnik_elementov');
+
+              ?>
+             <div class="consist_wrap">
+
+                 <div class="consist_tabs">
+                
+                     <!-- перебираем обьекты и выводим табы   -->
+                     <?php
+                     $i = 0;
+                     foreach ($consistMas as $key => $value) {
+                         $currentObject = $this->getObjectById($value);
+                         ?>
+                        <span class="<?php if($i<1) { echo "active"; } ?>" data-index="<?= $i ?>"><?= $currentObject->getValue('heading_tabname') ?></span>
+
+                     <?php
+                     $i++;
+                        }
+                     ?>
+                 </div>
+                 <div class="consist_content_wrapper">
+                     <?php
+                     $i = 0;
+                     foreach ($consistMas as $key => $value) {
+                         $currentObject = $this->getObjectById($value);
+                         ?>
+                         <div class="item_consist <?php if($i<1) { echo "active"; }?>" data-index="<?= $i ?>">
+                             <div class="consist_image">
+                            <img src="<?= $currentObject->getValue('image_cont') ?>" alt="">
+                             </div>
+                             <div class="consist_content_wr">
+                                 <h4><?=  $currentObject->getValue('heading_tabname') ?></h4>
+                                 <?= $currentObject->getValue('consist_description') ?>
+                             </div>
+                         </div>
+                    <?php
+                    $i++;
+                    }
+                    ?>
+                 </div>
+             </div>
+         </div>
+
+     </div>
+</div>

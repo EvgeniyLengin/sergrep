@@ -45,6 +45,8 @@ $page = $variables['page'];
 	<?= $this->render($variables, 'content/auth') ?>
 <?php elseif ( ($page->getObjectTypeId()) == 231 ): ?>
 	<?= $this->render($variables, 'content/personalarea') ?>
+<?php elseif ( ($page->getObjectTypeId()) == 234 ): ?>
+	<?= $this->render($variables, 'content/videomontaj') ?>
 <?php else: ?>
 	<div class="section_capt">
 		<div class="container">

@@ -1,5 +1,6 @@
 <?php
 $page = $variables['page'];
+
  ?>
 <main class="main-akcii lc">
         <div class="container">
@@ -10,6 +11,7 @@ $page = $variables['page'];
 <div class="lc-wrapper">
   <div class="lc-cntnt">
     <h4>Личный кабинет</h4>
+    <a href="/users/logout" style="margin-top:25px; display:block;">Выйти из личного кабинета</a>
             <div class="lc-tabs">
 
                   <div class="lc-one-tab inform active-lc">Общая информация</div>
@@ -47,6 +49,11 @@ $page = $variables['page'];
                           <span class="checkmark"></span>
                           <span class="prld">Показать все обьекты одновременно</span>
                       </div>
+
+                </div>
+                <div class="keys-modal">
+                    <h5>Изготовление ключей</h5>
+                    <span class="order_keys">Заполнить заявление</span>
                 </div>
               </div>
 
@@ -842,7 +849,101 @@ $page = $variables['page'];
               </div>
         </div>
     </div>
+    <div class="content-item-lc zayavlenie">
+        <div class="top_wrapper_head">
+            <div class="top-content-wrapper">
+                <div class="row_wrapper focus_changer">
+                    <label class="fordisp600" for=""> (полное фирменное наименование - для юридических лиц - ФИО, для ИП - ИНН / КПП) </label>
+                    <span class="predn_field ">Заказчик</span>
+                    <input class="table-value name_field1" type="text" name="" value="" >
+                </div>
+                <div class="row_wrapper focus_changer">
+                    <label for=""> (должность, фио) </label>
+                    <span class="predn_field ">В лице</span>
+                     <input class="table-value name_field2" type="text" name="" value="" >
+                </div>
+                <div class="row_wrapper focus_changer">
+                    <label for="">  </label>
+                    <span class="predn_field ">Дата</span>
+                    <input class="table-value name_field3" type="text" name="" value="<?php echo date("d.m.Y"); //24.12.2012 ?>" >
+                </div>
+            </div>
 
+        </div>
+        <div class="center-content-wrapper">
+            <div class="row_center_wrapper">
+                <div class="one-wrap-center">
+                    <span class="text_rw">Прошу изготовить</span>
+                    <div class="row_wrapper custom_fixed focus_changer">
+                        <label for="">(количество)</label>
+                        <input class="table-value keys_amount quantity_keys" type="text" name="" value="">
+
+                    </div>
+                </div>
+                <div class="two-wrap-center">
+                    <span class="text_rw">ключ</span>
+                    <input class="undefined_purpose key_pref" type="text" name="" value="(ей)">
+                    <span class="text_rw">и назначить ответственных лиц:</span>
+                </div>
+
+
+            </div>
+
+        </div>
+    <div class="for_add_new">
+
+        <div class="table-content-wrapper">
+            <div class="table-input-wrapper focus_changer">
+                <label for="">№ ключа</label>
+                <input class="table-value table_keys_keynumber" type="text" name="" value="">
+            </div>
+            <div class="table-input-wrapper focus_changer">
+                <label for="">ФИО</label>
+                <input class="table-value table_keys_fio" type="text" name="" value="">
+            </div>
+
+            <div class="table-input-wrapper focus_changer">
+                <label for="">Должность</label>
+                <input class="table-value table_keys_position" type="text" name="" value="">
+            </div>
+
+            <div class="table-input-wrapper focus_changer">
+                <label for="">Адрес</label>
+                <input class="table-value table_keys_address" type="text" name="" value="">
+            </div>
+
+            <div class="table-input-wrapper focus_changer">
+                <label for="">Телефон</label>
+                <input class="table-value table_keys_number" type="text" name="" value="">
+            </div>
+        </div>
+
+
+    </div>
+    <div class="finaly-wrap">
+        <div class="pluse">
+
+        </div>
+        <div class="wh_many">
+            <span class="oplat_wh">Оплата будет произведена:</span>
+            <input type="hidden" class="whoMany" name="" value="безналичная оплата">
+        <div class="box-wrapper">
+            <div class="box_1">
+            </div>
+            <span class="box_text">Наличный расчет</span>
+        </div>
+            <div class="box-wrapper">
+                <div class="box_2 active">
+
+                </div>
+                <span class="box_text">Безналичный расчет</span>
+            </div>
+
+            <input class="values_box" type="hidden" name="" value="">
+        </div>
+        <span class="sendme">Отправить заявление</span>
+    </div>
+    </div>
   </div>
 
   </div>
